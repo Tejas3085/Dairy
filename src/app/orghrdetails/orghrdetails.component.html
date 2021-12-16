@@ -1,0 +1,101 @@
+<p>orghrdetails works!</p>
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">Organization HR Details</h4>
+                        <!-- <p class="card-category">Complete your profile</p> -->
+                    </div>
+                    <div class="card-body">
+                        <form >
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width" >
+                                        <input class="Attribute" matInput placeholder="First Name"[(ngModel)]="orghrdetails.FName" #adminNameControl="ngModel" type="text" id="FName" name="FName"required onkeypress="return (event.charCode > 64 && 
+                                        event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)">
+                                    </mat-form-field>
+                                                          
+                                </div>
+
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width" >
+                                        <input class="Attribute" matInput placeholder="Last Name"[(ngModel)]="orghrdetails.LName" #adminNameControl="ngModel" type="text" id="LName" name="LName"required onkeypress="return (event.charCode > 64 && 
+                                        event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)">
+                                    </mat-form-field>
+                                                       
+                                </div>
+
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Mobile Number" [(ngModel)]="orghrdetails.Mobile"pattern="\d{10}" name="Mobile" #mobileControl="ngModel"type="number" required>
+                                    </mat-form-field>
+                                    <div class="help-block" *ngIf=" mobileControl.touched && mobileControl.errors?.pattern ">Mobile number is invalid</div>
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Email ID" [(ngModel)]="orghrdetails.Email"pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$" name="Email" #emailControl="ngModel"type="email" required>
+                                    </mat-form-field>
+                                        <div class="help-block" *ngIf=" emailControl.errors?.pattern && emailControl.touched ">Email  is invalid</div>
+                                </div>
+
+
+
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="User Name" [(ngModel)]="orghrdetails.Username" name="Username" #userNameControl="ngModel"type="text" required>
+                                    </mat-form-field>
+
+                                </div>
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Password" [(ngModel)]="orghrdetails.Password" name="Password" #passwordControl="ngModel"type="password" required>
+                                    </mat-form-field>
+
+                                </div>
+
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Entry Date" [(ngModel)]="orghrdetails.EntryDate" name="EntryDate" #entryDateControl="ngModel"type="date">
+                                    </mat-form-field>
+                                    <!-- <div class="help-block" *ngIf=" entryDateControl.touched && entryDateControl.invalid ">Date is required</div> -->
+                                </div>
+
+                                <div class="col-md-6">
+                                 
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Status"[(ngModel)]="orghrdetails.Status"#statusControl="ngModel"pattern="[a-zA-Z]*" name="Status" required type="text" onkeypress="return (event.charCode > 64 && 
+                                        event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)">
+                                    </mat-form-field>
+                                    <div class="help-block" *ngIf=" statusControl.touched && statusControl.errors?.pattern">Status is invalid</div>
+                                </div>
+
+                            </div>
+                            
+
+                            <div class="row">
+                                <div class="col-md-5"></div>
+                                <div class="">
+                                    <button mat-raised-button type="submit" class="btn btn-danger " (click)="OnSubmit()">Save</button>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="col-md-2"></div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+    </div>
+</div>
+<Script>
+    $('.alphaonly').bind('keyup blur', function() {
+        var node = $(this);
+        node.val(node.val().replace(/[^a-z ]/g, ''));
+    });
+</Script>

@@ -1,0 +1,246 @@
+<p>addproduct works!</p>
+<p>member works!</p>
+
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-2"></div>
+
+                    <div class="col-md-8"style="padding-top:13px">
+                        <div class="card">
+                            <div class="card-header card-header-danger">
+                                <h4 class="card-title">Instructor</h4>
+                                <!-- <p class="card-category">Complete your profile</p> -->
+                            </div>
+                            <div class="card-body">
+                                <form #AddproductForm="ngForm">
+
+                                    <div class="row">
+
+                                        <div class="col-md-6">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="ProductName" [(ngModel)]="product.ProductName" #ProductName="ngModel" name="ProductName" class="example-full-width" type="text" required onkeypress="return (event.charCode > 64 && 
+                                            event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)">
+                                            </mat-form-field>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <mat-form-field class="example-full-width">
+                                                <textarea matInput placeholder="ProductDescription" [(ngModel)]="product.ProductDescription" #ProductDescription="ngModel" name="ProductDescription" class="example-full-width" type="text" required></textarea>
+                                            </mat-form-field>
+                                        </div>
+
+                                        <!-- <div class="col-md-12">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="ProductDescription" [(ngModel)]="product.ProductDescription" #ProductDescription="ngModel" name="ProductDescription" class="example-full-width" type="text" required onkeypress="return (event.charCode > 64 && 
+                                            event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)">
+                                            </mat-form-field>
+                                        </div> -->
+
+                                        <div class="col-md-6">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="ProductCaption" [(ngModel)]="product.ProductCaption" #ProductCaption="ngModel" name="ProductCaption" class="example-full-width" type="text" required onkeypress="return (event.charCode > 64 && 
+                                            event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)">
+                                            </mat-form-field>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="ProdQuantityPerUnit" [(ngModel)]="product.ProdQuantityPerUnit" #ProdQuantityPerUnit="ngModel" type="number" name="ProdQuantityPerUnit" required>
+                                            </mat-form-field>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="ProductPricePerUnit" [(ngModel)]="product.ProductPricePerUnit" #ProductPricePerUnit="ngModel" name="ProductPricePerUnit" class="example-full-width" type="text" required onkeypress="return (event.charCode > 64 && 
+                                            event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)">
+                                            </mat-form-field>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="ProductRating" [(ngModel)]="product.ProductRating" #ProductRating="ngModel" name="ProductRating" class="example-full-width" type="text" required onkeypress="return (event.charCode > 64 && 
+                                            event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)">
+                                            </mat-form-field>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="ProductDiscount" [(ngModel)]="product.ProductDiscount" #ProductDiscount="ngModel" name="ProductDiscount" class="example-full-width" type="text" required onkeypress="return (event.charCode > 64 && 
+                                            event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)">
+                                            </mat-form-field>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="ProductCompany" [(ngModel)]="product.ProductCompany" #ProductCompany="ngModel" name="ProductCompany" class="example-full-width" type="text" required onkeypress="return (event.charCode > 64 && 
+                                            event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)">
+                                            </mat-form-field>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="ProductSpecification" [(ngModel)]="product.ProductSpecification" #ProductSpecification="ngModel" name="ProductSpecification" class="example-full-width" type="text" required onkeypress="return (event.charCode > 64 && 
+                                            event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)">
+                                            </mat-form-field>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="ProductAvailableSize" [(ngModel)]="product.ProductAvailableSize" #ProductAvailableSize="ngModel" name="ProductAvailableSize" class="example-full-width" type="text" required onkeypress="return (event.charCode > 64 && 
+                                            event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)">
+                                            </mat-form-field>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="ProductAvailableColor" [(ngModel)]="product.ProductAvailableColor" #ProductAvailableColor="ngModel" name="ProductAvailableColor" class="example-full-width" type="text" required onkeypress="return (event.charCode > 64 && 
+                                            event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)">
+                                            </mat-form-field>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="ProductMaterial" [(ngModel)]="product.ProductMaterial" #ProductMaterial="ngModel" name="ProductMaterial" class="example-full-width" type="text" required onkeypress="return (event.charCode > 64 && 
+                                            event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)">
+                                            </mat-form-field>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="ProductUnitInStock" [(ngModel)]="product.ProductUnitInStock" #ProductUnitInStock="ngModel" type="number" name="ProductUnitInStock" required>
+                                            </mat-form-field>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="ProductUnitInOrder" [(ngModel)]="product.ProductUnitInOrder" #ProductUnitInOrder="ngModel" type="number" name="ProductUnitInOrder" required>
+                                            </mat-form-field>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="ProductUnitWeight" [(ngModel)]="product.ProductUnitWeight" #ProductUnitWeight="ngModel" name="ProductUnitWeight" class="example-full-width" type="text" required onkeypress="return (event.charCode > 64 && 
+                                            event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)">
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="ProductStatus" [(ngModel)]="product.ProductStatus" #ProductStatus="ngModel" name="ProductStatus" class="example-full-width" type="text" required onkeypress="return (event.charCode > 64 && 
+                                            event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)">
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="ProductStockStatus" [(ngModel)]="product.ProductStockStatus" #ProductStockStatus="ngModel" name="ProductStockStatus" class="example-full-width" type="text" required onkeypress="return (event.charCode > 64 && 
+                                            event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)">
+                                            </mat-form-field>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="MainCategoryId" [(ngModel)]="product.MainCategoryId" #MainCategoryId="ngModel" type="number" name="MainCategoryId" required>
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="SubCategoryId" [(ngModel)]="product.SubCategoryId" #SubCategoryId="ngModel" type="number" name="SubCategoryId" required>
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="SupplierId" [(ngModel)]="product.SupplierId" #SupplierId="ngModel" type="number" name="SupplierId" required>
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="OfferId" [(ngModel)]="product.OfferId" #OfferId="ngModel" type="number" name="OfferId" required>
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="ReviewId" [(ngModel)]="product.ReviewId" #ReviewId="ngModel" type="number" name="ReviewId" required>
+                                            </mat-form-field>
+                                        </div>
+
+                                        <!-- <div class="col-md-6">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="CreatedDate" [(ngModel)]="product.CreatedDate" #CreatedDate="ngModel" name="CreatedDate" class="example-full-width" type="text" required onkeypress="return (event.charCode > 64 && 
+                                            event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)">
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="CreatedBy" [(ngModel)]="product.CreatedBy" #CreatedBy="ngModel" name="CreatedBy" class="example-full-width" type="text" required onkeypress="return (event.charCode > 64 && 
+                                            event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)">
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="UpdatedDate" [(ngModel)]="product.UpdatedDate" #UpdatedDate="ngModel" name="UpdatedDate" class="example-full-width" type="text" required onkeypress="return (event.charCode > 64 && 
+                                            event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)">
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="UpdatedBy" [(ngModel)]="product.UpdatedBy" #UpdatedBy="ngModel" name="UpdatedBy" class="example-full-width" type="text" required onkeypress="return (event.charCode > 64 && 
+                                            event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)">
+                                            </mat-form-field>
+                                        </div> -->
+                                        <div class="col-md-6">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="ProductImage1" [(ngModel)]="product.ProductImage1" #ProductImage1="ngModel" name="ProductImage1" class="example-full-width" type="text" required onkeypress="return (event.charCode > 64 && 
+                                            event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)">
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="ProductImage2" [(ngModel)]="product.ProductImage2" #ProductImage2="ngModel" name="ProductImage2" class="example-full-width" type="text" required onkeypress="return (event.charCode > 64 && 
+                                            event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)">
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="ProductImage3" [(ngModel)]="product.ProductImage3" #ProductImage3="ngModel" name="ProductImage3" class="example-full-width" type="text" required onkeypress="return (event.charCode > 64 && 
+                                            event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)">
+                                            </mat-form-field>
+                                        </div>
+
+
+                                        <!-- <div class="col-md-6">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="Email ID" [(ngModel)]="instructor.Email" #EmailControl="ngModel" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$" name="Email" type="email" required>
+                                            </mat-form-field>
+                                            <div class="help-block" *ngIf=" EmailControl.errors?.pattern && EmailControl.touched ">Email is invalid</div>
+                                        </div> -->
+
+                                        <!-- <div class="col-md-6">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="Status" [(ngModel)]="instructor.Status" #StatusControl="ngModel" name="Status" class="example-full-width" type="text" required>
+                                            </mat-form-field>
+                                        </div> -->
+                                      
+
+
+                                    </div>
+
+                                    <div class="row"style="margin:auto">
+                                        <div class="col-md-5"></div>
+
+                                        <button mat-raised-button type="submit" class="btn btn-danger" [disabled]="AddproductForm.invalid" (click)="OnSubmit()">Save</button>
+
+                                        <div class="col-md-2"></div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-2"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,98 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">Add Franchise Details</h4>
+                 
+                    </div>
+                    <div class="card-body">
+                        <form #areaForm="ngForm">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width" >
+                                        <input class="Attribute" matInput placeholder="Brand Name"[(ngModel)]="franchisedetails.BrandName" #BrandName="ngModel" type="text" id="BrandName" name="BrandName "required onkeypress="return (event.charCode > 64 && 
+                                        event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)">
+                                    </mat-form-field>                                  
+                                </div>
+
+
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Investment Amounts"[(ngModel)]="franchisedetails.InvestmentAmount" name="InvestmentAmount"  #InvestmentAmount="ngModel" required type="number">
+                                    </mat-form-field>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <mat-form-field class="example-full-width" >
+                                        <textarea class="Attribute" matInput placeholder="Business Description"[(ngModel)]="franchisedetails.BusinessDescription" #BusinessDescription="ngModel" type="text" id="BusinessDescription" name="BusinessDescription"required onkeypress="return (event.charCode > 64 && 
+                                        event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)"></textarea>
+                                    </mat-form-field>                                 
+                                </div>
+
+                                <div class="col-md-12">
+                                    <mat-form-field class="example-full-width" >
+                                        <textarea class="Attribute" matInput placeholder="Rules"[(ngModel)]="franchisedetails.Rules" #Rules="ngModel" type="text" id="Rules" name="Rules"required onkeypress="return (event.charCode > 64 && 
+                                        event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)"></textarea>
+                                    </mat-form-field>                                  
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group pmd-textfield pmd-textfield-floating-label example-full-width">
+                                        <label for="propeller-select">City</label>
+                                        <select id="propeller-select" class="form-control" name="City_Id" [(ngModel)]=franchisedetails.City.City_Id #City_Id="ngModel" (change)="CityChange($event)">
+                                            <option *ngFor="let City of cityList" [value]="City.City_Id"> {{City.CityName}} </option>                                                              
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group pmd-textfield pmd-textfield-floating-label example-full-width">
+                                        <label for="propeller-select">BusinessType</label>
+                                        <select id="propeller-select" class="form-control" name="Business_Id" [(ngModel)]=franchisedetails.BusinessType.Business_Id #BusinessType_Id="ngModel" (change)="BusinessTypeChange($event)">
+                                            <option *ngFor="let BusinessType of businessTypeList" [value]="BusinessType.Business_Id"> {{BusinessType.Business_Type}} </option>                                                              
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-12">
+                                    <mat-form-field class="example-full-width" >
+                                        <textarea class="Attribute" matInput placeholder="Facilities Provided"[(ngModel)]="franchisedetails.FacilitiesProvided" #FacilitiesProvided="ngModel" type="text" id="FacilitiesProvided" name="FacilitiesProvided"required onkeypress="return (event.charCode > 64 && 
+                                        event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)"></textarea>   
+                                    </mat-form-field>
+                                </div>
+
+                                <div class="col-md-12">
+                                    
+                                        <label>Upload Photos</label>
+                                        <input #fileUpload type="file" (change)="fileChangeEvent($event)" placeholder="Upload file..." multiple accept=".jpg,.png" required>
+                                  
+                                </div>
+                                                           
+                            </div>
+                          
+                            <div class="row">
+                                <div class="col-md-5"></div>
+                                <div class="">
+                                    <button mat-raised-button type="submit"[disabled]="areaForm.invalid" class="btn btn-danger " (click)="OnSubmit()">Submit</button>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="col-md-2"></div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-2"></div>
+        </div>
+    </div>
+</div>
+<Script>
+    $('.alphaonly').bind('keyup blur', function() {
+        var node = $(this);
+        node.val(node.val().replace(/[^a-z ]/g, ''));
+    });
+</Script>

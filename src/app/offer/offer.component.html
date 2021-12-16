@@ -1,0 +1,83 @@
+
+
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8"style="padding-top:15px">
+                <div class="card">
+                    <form #OfferForm="ngForm">
+                        <div class="card-header card-header-danger">
+                            <h4 class="card-title">Offers </h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+
+                           
+                                
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="OfferTitle " [(ngModel)]="productOffer.OfferTitle" #OfferTitleControl="ngModel" name="OfferTitle" class="example-full-width" type="text" required onkeypress="return (event.charCode > 64 && 
+                                    event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)">
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <textarea matInput placeholder="OfferDescription" [(ngModel)]="productOffer.OfferDescription" #OfferDescription="ngModel" name="OfferDescription" class="example-full-width" type="text" required></textarea>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="OfferOccassion " [(ngModel)]="productOffer.OfferOccassion" #OfferOccassionControl="ngModel" name="OfferOccassion" class="example-full-width" type="text" required onkeypress="return (event.charCode > 64 && 
+                                    event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)">
+                                    </mat-form-field>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="OfferPercentOff" [(ngModel)]="productOffer.OfferPercentOff" #OfferPercentOffControl="ngModel" name="OfferPercentOff" type="number" required>
+                                    </mat-form-field>
+
+                                </div>
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="OfferStartDate" [(ngModel)]="productOffer.OfferStartDate" #OfferStartDate="ngModel" type="date" name="OfferStartDate" required>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="OfferEndDate " [(ngModel)]="productOffer.OfferEndDate" #OfferEndDate="ngModel" type="date" name="OfferEndDate" required>
+                                    </mat-form-field>
+                                </div>
+
+                                
+            
+
+                            
+                                <div class="col-md-6">
+                                    <label for="avatar">Upload Offer Image :</label>
+
+                                    <input type="file" [(ngModel)]="productOffer.OfferImage"  (change)="fileChangeEvent($event)" #OfferImageControl="ngModel" id="avatar" name="OfferImage" accept="image/png, image/jpeg" required>
+
+                                </div> 
+
+                              
+                            </div>
+                            <div class="row"style="margin:auto">
+                                <div class="col-md-5"></div>
+
+                                <button mat-raised-button type="submit" class="btn btn-danger" [disabled]="OfferForm.invalid" (click)="OnSubmit()">Submit</button>
+                                <div class="clearfix"></div>
+
+                                <div class="col-md-2"></div>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+    </div>
+</div>
+

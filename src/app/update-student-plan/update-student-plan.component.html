@@ -1,0 +1,56 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <div class="card">
+
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title"> Update student Plan</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="Title"[(ngModel)]="studentPlanMaster.Title" name="studentplan" #studentplanControl="ngModel" type="text"required onkeypress="return (event.charCode > 64 && 
+                                    event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)">
+                                </mat-form-field>
+                                <!-- <div class="help-block" *ngIf=" userNameControl.touched && userNameControl.invalid ">User Name is required</div> -->
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="Price" [(ngModel)]="studentPlanMaster.Price" name="Price" #studentplanControl="ngModel"class="example-full-width" type="number"required  >
+                                </mat-form-field>
+                                <!-- <div class="help-block" *ngIf=" passwordControl.touched && passwordControl.invalid ">Password is required</div> -->
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12">
+                                <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="Status" [(ngModel)]="studentPlanMaster.Status" name="Status" #studentplanControl="ngModel"class="example-full-width" type="text"required  onkeypress="return (event.charCode > 64 && 
+                                    event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)">
+                                </mat-form-field>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-md-4"></div>
+                            <div class="col-md-4">
+
+                                <button mat-raised-button type="submit" class="btn btn-danger pulright" (click)="OnSubmit()">Submit</button>
+                                <!-- <div class="clearfix"></div> -->
+                            </div>
+                            <div class="col-md-4"></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,77 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <!-- <div class="col-md-2"></div> -->
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">Investors</h4>
+                        
+                        <p class="card-category"></p>
+                    </div>
+                    <div class="card-body">
+                        <form #orgTypeForm="ngForm">
+                            <div class="row">
+
+                                <div class="col-md-12">                                
+                                    <br>
+                                    <div class="table-responsive">
+                                      <table class="table table-bordered">
+                                        <thead>
+                                          <tr class="titlecolor">
+                                          
+                                            <th>Id</th>
+                                            <th>First Name</th>
+                                            <th>Last Name</th>
+                                            <th>Address</th>
+                                        
+                                            <th>Mobile</th>
+                                            <th>Email</th>
+                                            <th>View</th>
+
+                                         
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                          <tr *ngFor="let i of InvestorList">
+                                            
+                                         
+                                            <td>{{i.Id}}</td>
+                                            <td>{{i.FName}}</td>
+                                           
+                                            <td>{{i.LName}}</td>
+                                            <td>{{i.Address}}</td>
+                                          
+                                            <td>{{i.Mobile}}</td>
+                                            <td>{{i.Email}}</td>
+                                        
+
+
+                                             <td (click)="View(i.Id)" style="cursor: pointer;"><i class="fa fa-eye" aria-hidden="true" style="margin-right: 7px;"></i>View</td> 
+
+                                             <!-- <td (click)="View(i.Id)" style="cursor: pointer;"><i class="fa fa-pencil" aria-hidden="true" style="margin-right: 7px;"></i>View</td> -->
+                                            <!-- <td (click)="Delete(i.JId)" style="cursor: pointer;"><i class="fa fa-trash" aria-hidden="true" style="margin-right: 7px;"></i>Delete</td>  -->
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </div>                   
+                                  </div>  
+                                </div>  
+
+                              
+                            <div class="row">
+                                <div class="col-md-12">
+                                   
+                                </div>
+                            </div>
+
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

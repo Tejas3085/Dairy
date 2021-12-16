@@ -1,0 +1,141 @@
+
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <!-- <div class="col-md-2"></div> -->
+            <div class="col-md-12"style="padding-top:45px">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">Enquiry List </h4>
+                        <p class="card-category"></p>
+                    </div>
+                    <div class="card-body">
+                        <!-- <div class="row">
+                                <div class="col-md-6"> </div>
+
+                              <div class="col-md-6">
+
+                                 <div class="row">
+                                    
+                                     <div class="col-md-3">
+                                        <button type="submit" id="myCheck" (click)="count()">Count</button>
+                                    </div>
+                                     <div class="col-md-3">
+                                        <button type="submit" class="resetlist" (click)="Reset()">Reset</button>
+                                    </div>
+                                 </div>
+
+                              </div>
+                            
+                        </div> -->
+                        <form #orgTypeForm="ngForm">
+                            <div class="row">
+
+                                <div class="col-md-12">
+                                    <br>
+                                    <div class="card">
+                                    <div class="table-responsive">
+
+                                        <table class="table table-bordered">
+                                            <thead class="thh">
+                                                <tr class="titlecolor">
+                                                    <th>Sr.No</th> 
+                                                    <th>Name/Days</th>
+                                                    <!-- <th>Last Name</th> -->
+                                                    <th>1</th>
+                                                    <th>2</th>
+                                                    <th>3</th>
+                                                    <th>4</th>
+                                                    <th>5</th>
+                                                    <th>6</th>
+                                                    <th>7</th>
+                                                    <th>8</th>
+                                                    <th>9</th>
+                                                    <th>10</th> 
+                                                    <th>11</th>
+                                                    <th>12</th>
+                                                    <th>13</th>
+                                                    <th>14</th>
+                                                    <th>15</th>  
+                                                    <th>16</th>
+                                                    <th>17</th>
+                                                    <th>18</th>
+                                                    <th>19</th>
+                                                    <th>20</th>  
+                                                    <th>21</th>
+                                                    <th>22</th>
+                                                    <th>23</th>
+                                                    <th>24</th>
+                                                    <th>25</th>
+                                                    <th>26</th>  
+                                                    <th>27</th>
+                                                    <th>28</th>
+                                                    <th>29</th>
+                                                    <th>30</th>
+                                                    <th>31</th>
+
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr *ngFor="let i of attendenceStatuslist">
+                                                     <td >{{i.Id}}</td> 
+                                                    <td>{{i.FirstName}} {{i.LastName}}</td>
+                                                    <!-- <td>{{i.LastName}}</td> [(ngModel)]="isChecked" (change)="checkValue(isChecked?'A':'B')"-->
+                                                    <td *ngFor="let data of list"><input type="checkbox"  name="attendance"></td >
+                                                    <!-- <td><input type="checkbox" name="attendance"></td>
+                                                    <td><input type="checkbox" name="attendance" ></td>
+                                                    <td><input type="checkbox" name="attendance"></td>
+                                                    <td><input type="checkbox" name="attendance"></td>
+                                                    <td><input type="checkbox" name="attendance"></td>
+                                                    <td><input type="checkbox" name="attendance"></td>
+                                                    <td><input type="checkbox" name="attendance"></td>
+                                                    <td><input type="checkbox" name="attendance"></td>
+                                                    <td><input type="checkbox" name="attendance"></td>
+                                                    <td><input type="checkbox" name="attendance"></td>
+                                                    <td><input type="checkbox" name="attendance"></td>
+                                                    <td><input type="checkbox" name="attendance"></td>
+                                                    <td><input type="checkbox" name="attendance"></td>
+                                                    <td><input type="checkbox" name="attendance"></td>
+                                                    <td><input type="checkbox" name="attendance"></td>
+                                                    <td><input type="checkbox" name="attendance"></td>
+                                                    <td><input type="checkbox" name="attendance"></td>
+                                                    <td><input type="checkbox" name="attendance"></td>
+                                                    <td><input type="checkbox" name="attendance"></td>
+                                                    <td><input type="checkbox" name="attendance"></td>
+                                                    <td><input type="checkbox" name="attendance"></td>
+                                                    <td><input type="checkbox" name="attendance"></td>
+                                                    <td><input type="checkbox" name="attendance"></td>
+                                                    <td><input type="checkbox" name="attendance"></td>
+                                                    <td><input type="checkbox" name="attendance"></td>
+                                                    <td><input type="checkbox" name="attendance"></td>
+                                                    <td><input type="checkbox" name="attendance"></td>
+                                                    <td><input type="checkbox" name="attendance"></td>
+                                                    <td><input type="checkbox" name="attendance"></td>
+                                                    <td><input type="checkbox" name="attendance"></td> -->
+                                                    <!-- <td > <i class="fa fa-eye"(click)="View(i.Id)" style="cursor: pointer;   color:  rgb(9, 97, 138); font-size: 20px; margin-right: 21px;"   aria-hidden="true" ></i>
+                                                        <i class="fa fa-pencil" (click)="Edit(i.Id)"   style="cursor: pointer; color: green;  font-size: 20px;  margin-right: 21px;"  aria-hidden="true" ></i> 
+                                                         <i class="fa fa-trash"(click)="Delete(i.Id)" style="cursor: pointer;   color:  rgb(199, 56, 5); font-size: 20px;"   aria-hidden="true" ></i></td>  -->
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col-md-12">
+
+                                </div>
+                            </div>
+
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

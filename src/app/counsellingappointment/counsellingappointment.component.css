@@ -1,0 +1,12 @@
+.card .card-header .card-title {
+    margin-bottom: 3px;
+    text-align: center;
+}
+.col-md-2{
+    margin-top: 13px;
+    margin-left: -11px !important;
+}
+.mat-form-field-wrapper {
+    position: relative;
+    margin-right: 55px;
+}

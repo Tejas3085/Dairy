@@ -1,0 +1,56 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <!-- <div class="col-md-2"></div> -->
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">Business Categories</h4>
+                        <p class="card-category"></p>
+                    </div>
+                    <div class="card-body">
+
+                        <div class="row">
+
+                            <div class="col-md-12">
+
+                                <div class="table-responsive">
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr class="titlecolor">
+                                                <th>ID</th>
+                                                <th>Business Type</th>
+
+                                                <th>Edit</th>
+                                                <th>Delete</th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr *ngFor="let i of businesscategorylist">
+                                                <td style="padding-left: 17px;">{{i. Business_Id}}</td>
+                                                <td>{{i. Business_Type}}</td>
+
+                                                <td (click)="Edit(i.Business_Id)" style="cursor: pointer;"><i class="fa fa-pencil" aria-hidden="true" style="margin-right: 7px;"></i>Edit</td>
+                                                <td (click)="Delete(i.Business_Id)" style="cursor: pointer;"><i class="fa fa-trash" aria-hidden="true" style="margin-right: 7px;"></i>Delete</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-md-12">
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,40 @@
+/* .input1{
+    background-image: none;
+    background-color: white;
+    border: 1px solid black;
+    padding-left: 10px;
+} */
+
+
+/* 
+.planhead{
+    text-align: center;
+}
+.main-content {
+    margin-top: 0px;
+}
+.pd91{
+    padding-bottom: 91px;
+} */
+
+.mat-form-field-infix {
+    padding: -0.5em 0 !important;
+    border-top: .84375em solid transparent;
+}
+
+.radio1 {
+    padding-right: inherit;
+}
+
+.radio2 {
+    padding-top: 14px;
+}
+
+
+/* .plancard {
+    margin-left: 140px;
+} */
+
+.days1 {
+    margin-right: 6px;
+}

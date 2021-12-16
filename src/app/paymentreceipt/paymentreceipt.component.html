@@ -1,0 +1,204 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-1"></div>
+
+                    <div class="col-md-10">
+                        <div class="row" style="justify-content: center;">
+                            <button (click)="pdfpage()" id="btnprint">Get Invoice</button>
+                        </div>
+                        <div class="card" id="contentToConvert">
+                            <!-- <div class="card-header card-header-danger">
+                                <h4 class="card-title">Payment Receipt</h4>
+                            </div> -->
+                            <div class="card-body">
+                                <!-- <div class="card"> -->
+                                <!-- <div class="row"> -->
+                                <div class="row">
+                                    <div class="col-md-4">
+
+                                        <img src="../../assets/GymLogo.jpg" class="rounded" alt="marc" height="73px" width="auto">
+
+                                    </div>
+                                    <div class="col-md-4 ">
+                                        <u style="color:#ff9800"><h3>Invoice Receipt</h3></u>
+                                    </div>
+                                    <div class="col-md-1 "></div>
+                                    <div class="col-md-3 uppertbl">
+                                        2nd & 3rd Floor,<br> Krishnai Building, Rajyog Society,Warje,Pune
+                                    </div>
+                                </div>
+                                <hr>
+                                <!-- <div class="col-md-3"> -->
+
+                                <form class="form-inline">
+                                    <br>
+                                    <table style="width:75%">
+                                        <tr>
+                                            <th class="uppertbl">Receipt No:</th>
+                                            <td class="uppertbl">{{paymentHistory.Id}}</td>
+                                        </tr>
+                                        <tr>
+                                            <th class="uppertbl">Transaction Date</th>
+                                            <td class="uppertbl">{{paymentHistory.PaidDate}}</td>
+                                        </tr>
+                                        <tr>
+                                            <th class="uppertbl">Name</th>
+                                            <td class="uppertbl">{{paymentHistory.Member.FirstName}} {{paymentHistory.Member.LastName}}</td>
+                                        </tr>
+                                        <tr>
+                                            <th class="uppertbl">Contact No.</th>
+                                            <td class="uppertbl">{{paymentHistory.Member.Contact}}</td>
+                                        </tr>
+                                        <tr>
+                                    </table>
+                                    <br><br> <br>
+                                    <!-- <table class="table table-bordered">
+                                        <thead class="thh">
+                                            <tr class="titlecolor">
+                                                <th>Id</th>
+                                                <th>Receipt No:</th>
+
+                                                <th>Paid Date</th>
+                                                <th>Name</th>
+                                                <th>Member Contact No.</th>
+
+
+
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr *ngFor="let i of paymentHistoryList">
+                                                <td>{{i.Id}}</td>
+                                                <td>{{i.MemberId}}</td>
+                                                <td>{{i.PaidDate}}</td>
+                                                <td>{{i.Member.UserName}}</td>
+                                                <td>{{i.Member.Contact}}</td>
+
+
+                                            </tr>
+                                        </tbody>
+                                    </table> -->
+
+
+
+
+                                    <!-- <div class="col-md-6" >
+                                        <label for="email" style="margin-right: 216px; color: black; margin-top: 22px;">Receipt No:</label>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label for="email" style="color: black; margin-top: 22px;" [(ngModel)]="PaymentHistory.PaidDate" #PaidDate="ngModel" type="date" name="PaidDate" required>Transaction Date:</label>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="email" style="color: black;margin-right: 243px;" [(ngModel)]=userPlanDetails.Member.FirstName #FirstName="ngModel" readonly>Name:</label>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <label for="email" style="color: black;" [(ngModel)]=userPlanDetails.Member.Contact #Contact="ngModel" readonly>Mobile No.:</label>
+                                    </div> -->
+                                    <div class="col-md-12">
+                                        <br>
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered">
+                                                <thead class="thh">
+                                                    <tr class="titlecolor">
+                                                        <th>Sr. No.</th>
+                                                        <th>Membership Plan</th>
+                                                        <th>Date of Transaction</th>
+                                                        <th>Price</th>
+                                                        <th>Received Amount</th>
+                                                        <th>Pending Amount</th>
+
+
+                                                        <!-- <th>Member Id</th>
+                                                <th>Member Name</th>
+                                                <th>Member Contact No.</th>
+                                                <th>Plan ID</th>
+                                               
+                                               
+                                               
+                                             
+                                                <th>PaidDate</th>
+                                                <th>UpdatedBy</th>
+                                                <th>UpdatedDate</th>
+                                                <th>CreatedBy</th>
+                                                <th>CreatedDate</th> -->
+
+
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>{{paymentHistory.Id}}</td>
+                                                        <td>{{paymentHistory.MembershipPlan.Title}}</td>
+                                                        <td>{{paymentHistory.PaidDate}}</td>
+                                                        <td>{{paymentHistory.Price}}</td>
+                                                        <td>{{paymentHistory.ReceivedAmount}}</td>
+                                                        <td>{{paymentHistory.PendingAmount}}</td>
+
+                                                        <!-- <td>{{i.MemberId}}</td>
+                                                <td>{{i.Member.UserName}}</td>
+                                                <td>{{i.Member.Contact}}</td>
+                                                <td>{{i.PlanId}}</td>
+                                             
+                                             
+                                           
+                                                <td>{{i.UpdatedBy}}</td>
+                                                <td>{{i.UpdatedDate}}</td>
+                                                <td>{{i.CreatedBy}}</td>
+                                                <td>{{i.CreatedDate}}</td> -->
+
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <br>
+
+
+
+                                    <table>
+                                        <tr style="color: #046ca2">
+                                            <th class="uppertbl alnright">Total Amount:</th>
+                                            <td class="uppertbl alnright"><i class="fa fa-inr" aria-hidden="true"></i>{{paymentHistory.ReceivedAmount}}</td>
+                                        </tr>
+
+                                        <tr>
+                                    </table>
+
+                                    <br>
+                                    <!-- <div class="col-md-6">
+                                        <label for="email"style="color: black;">Status:</label>
+                                      </div>
+                                      
+                                      <div class="col-md-6"></div>
+                                      <div class="col-md-6">
+                                        <label for="email"style="color: black;"[(ngModel)]="PaymentHistory.UpdatedBy" #UpdatedBy="ngModel" name="UpdatedBy"  readonly>Received By:</label>
+                                      </div> -->
+
+
+
+
+                                </form>
+
+
+                            </div>
+                            <!--CardEnd -->
+                            <div class="col-md-12"></div>
+
+                            <!-- <button (click)="generatePdf()" id="download"   >Open PDF</button> -->
+                            <div class="col-md-2"></div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-1"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,92 @@
+
+
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8"style="padding-top:15px">
+                <div class="card">
+                    <form #subscriptionForm="ngForm">
+                        <div class="card-header card-header-danger">
+                            <h4 class="card-title">Subscription </h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+
+                                <!-- <div class="col-md-6">
+                                    <div class="form-group pmd-textfield pmd-textfield-floating-label example-full-width">
+                                        <label for="propeller-select">SubscriptionTypeId</label>
+                                        <select id="propeller-select" class="form-control" name="SubscriptionTypeId" [(ngModel)]=subscription.SubscriptionTypeId #SubscriptionTypeId="ngModel" (change)="MainExeChange($event)">
+                                            <option *ngFor="let SubscriptionType of SubscriptionTypelist" [value]="SubscriptionType.Id">
+                                                {{SubscriptionType.Name}} </option>
+                                                <option>OMd</option>
+                                        </select>
+                                    </div>
+
+                                </div> -->
+                                
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="SubscriptionTitle " [(ngModel)]="subscription.SubscriptionTitle" #SubscriptionTitleControl="ngModel" name="SubscriptionTitle" class="example-full-width" type="text" required onkeypress="return (event.charCode > 64 && 
+                                    event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)">
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Discount Percent" [(ngModel)]="subscription.Discount" #DiscountControl="ngModel" name="Discount" type="number" required>
+                                    </mat-form-field>
+
+                                </div>
+
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <textarea matInput placeholder="SubscriptionDescription" [(ngModel)]="subscription.SubscriptionDescription" #SubscriptionDescription="ngModel" name="SubscriptionDescription" class="example-full-width" type="text" required></textarea>
+                                    </mat-form-field>
+                                </div>
+
+                                
+            
+
+                                <div class="col-md-6">
+                                    <div class="form-group pmd-textfield pmd-textfield-floating-label example-full-width">
+                                        <label for="propeller-select">Status</label>
+                                        <select id="propeller-select" class="form-control" name="Status" [(ngModel)]=subscription.Status #Status="ngModel" (change)="MainExeChange($event)">
+                                            <!-- <option *ngFor="let SubscriptionType of SubscriptionTypelist" [value]="SubscriptionType.Id">
+                                                {{SubscriptionType.Name}} </option> -->
+                                                <option>Active</option>
+                                                <option>InActive</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+                                <!-- <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="End Date" [(ngModel)]="subscription.EndDate" #EndDate="ngModel" type="date" name="EndDate" required>
+                                    </mat-form-field>
+                                </div> -->
+                                <div class="col-md-6">
+                                    <label for="avatar">Upload Photo :</label>
+
+                                    <input type="file" [(ngModel)]="subscription.Image"  (change)="fileChangeEvent($event)" #ImageControl="ngModel" id="avatar" name="Image" accept="image/png, image/jpeg" required>
+
+                                </div> 
+
+                              
+                            </div>
+                            <div class="row"style="margin:auto">
+                                <div class="col-md-5"></div>
+
+                                <button mat-raised-button type="submit" class="btn btn-danger" [disabled]="subscriptionForm.invalid" (click)="OnSubmit()">Submit</button>
+                                <div class="clearfix"></div>
+
+                                <div class="col-md-2"></div>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+    </div>
+</div>

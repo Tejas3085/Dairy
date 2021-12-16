@@ -1,0 +1,171 @@
+<p>diet-plan works!</p>
+
+
+
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10">
+                <div class="card">
+                    <form #DietPlanform="ngForm">
+                        <div class="card-header card-header-danger">
+                            <h4 class="card-title">Diet Plan</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+
+                                <div class="col-md-4">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Member Name" [(ngModel)]="member.FirstName" #FirstName="ngModel" name="FirstName" class="example-full-width" type="text" required onkeypress="return (event.charCode > 64 && 
+                                    event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)">
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-4">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Height" [(ngModel)]="MemberHealthInfo.Height" #Height="ngModel" name="Height" type="number" required>
+                                    </mat-form-field>
+
+                                </div>
+                                <div class="col-md-4">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Weight" [(ngModel)]="MemberHealthInfo.Weight" #Weight="ngModel" name="Weight" type="number" required>
+                                    </mat-form-field>
+
+                                </div>
+
+                                <div class="col-md-4">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Average Weight" [(ngModel)]="MemberHealthInfo.AverageWeight" #AverageWeight="ngModel" name="AverageWeight" type="number" required>
+                                    </mat-form-field>
+
+                                </div>
+                                <div class="col-md-4">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Total Fat %" [(ngModel)]="MemberHealthInfo.TotalFat" name="TotalFat" #TotalFat="ngModel" type="number" required>
+                                    </mat-form-field>
+
+                                </div>
+                                <div class="col-md-4">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Average Fat %" [(ngModel)]="MemberHealthInfo.AverageFat" name="AverageFat" #AverageFat="ngModel" type="number" required>
+                                    </mat-form-field>
+
+                                </div>
+
+
+
+
+
+                            </div>
+                            <br>
+
+                            <!--Start-->
+                            <div id="MainForm">
+
+
+
+                                <div class="list-group panel">
+                                    <a href="#form3" class="list-group-item list-group-item-success strong" data-toggle="collapse" data-parent="#MainForm">  Add Diet Plan <i i id="one" class="fa fa-angle-left plus" aria-hidden="true"> </i> <i id="two" class="fa fa-angle-down plus" aria-hidden="true"></i></a>
+                                    <div class="collapse submenufont" id="form3">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <div class="form-group pmd-textfield pmd-textfield-floating-label example-full-width">
+                                                    <label for="propeller-select">Type Of Diet</label>
+                                                    <select id="propeller-select" class="form-control" name="TypeOfDiet" [(ngModel)]=DietTable.TypeOfDiet #TypeOfDiet="ngModel">
+                                                        <option>Veg</option>
+                                                        <option>Non-Veg</option>
+                                                    </select>
+                                                </div>
+
+                                            </div>
+                                            <div class="col-md-6">
+                                                <mat-form-field class="example-full-width">
+                                                    <input matInput placeholder="Time" [(ngModel)]="DietTable.Time" name="Time" #Time="ngModel" type="text" required>
+                                                </mat-form-field>
+
+                                            </div>
+                                            <!-- <div class="col-md-6">
+                                                <mat-form-field class="example-full-width">
+                                                    <input matInput placeholder="Member" [(ngModel)]="DietTable.MemberId" name="MemberId" #MemberId="ngModel" type="number" required>
+                                                </mat-form-field>
+
+                                            </div> -->
+                                            <div class="col-md-6">
+                                                <mat-form-field class="example-full-width">
+                                                    <input matInput placeholder="Menu" [(ngModel)]="DietTable.Menu" name="Menu" #Menu="ngModel" class="example-full-width" type="text" required onkeypress="return (event.charCode > 64 && 
+                                    event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)">
+                                                </mat-form-field>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <mat-form-field class="example-full-width">
+                                                    <input matInput placeholder="Quantity" [(ngModel)]="DietTable.Qty" name="Qty" #Qty="ngModel" type="text" required>
+                                                </mat-form-field>
+
+                                            </div>
+
+                                            <div class="col-md-6"> <button mat-raised-button type="submit" class="btn btn-danger" (click)="OnSave()">Add</button>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <a href="#form1" class="list-group-item list-group-item-success strong" data-toggle="collapse" data-parent="#MainForm"> Diet Plan List <i i id="one" class="fa fa-angle-left plus" aria-hidden="true"> </i> <i id="two" class="fa fa-angle-down plus" aria-hidden="true"></i> </a>
+                                    <div class="collapse submenufont" id="form1">
+                                        <div class="row">
+
+                                            <div class="col-md-12">
+                                                <br>
+                                                <div class="table-responsive">
+                                                    <table class="table table-bordered">
+                                                        <thead class="thh">
+                                                            <tr class="titlecolor">
+                                                                <!-- <th>Id</th> -->
+                                                                <th><img src="../../assets/Types-diet.png" alt="Girl in a jacket" width="50" height="50"><br>TypeOfDiet</th>
+                                                                <th><img src="../../assets/clock.png" alt="Girl in a jacket" width="50" height="50"><br>Time</th>
+                                                                <th><img src="../../assets/menu.png" alt="Girl in a jacket" width="50" height="50"><br>Menu</th>
+                                                                <th><img src="../../assets/quantity.png" alt="Girl in a jacket" width="50" height="50"><br>Qty</th>
+
+                                                                <th><img src="../../assets/delete.png" alt="Girl in a jacket" width="50" height="50"><br>Delete</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr *ngFor="let i of dietTablelist">
+                                                                <!-- <td>{{i.Id}}</td> -->
+                                                                <td>{{i.TypeOfDiet}}</td>
+                                                                <td>{{i.Time}}</td>
+                                                                <td>{{i.Menu}}</td>
+                                                                <td>{{i.Qty}}</td>
+
+                                                                <td (click)="Delete(i.Id)" style="cursor: pointer;"><i class="fa fa-trash" aria-hidden="true" style="margin-right: 7px;"></i>Delete</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+
+                            <!-- 
+                            <div class="row">
+                                <div class="col-md-5"></div>
+
+                                <button mat-raised-button type="submit" class="btn btn-danger" (click)="OnSubmit()">Submit</button>
+                                <div class="clearfix"></div>
+
+                                <div class="col-md-2"></div>
+                            </div> -->
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,118 @@
+<p>specificationlist works!</p>
+<p>instructor-list works!</p>
+
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <!-- <div class="col-md-2"></div> -->
+            <div class="col-md-12"style="padding-top:13px">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">Product List</h4>
+                        <p class="card-category"></p>
+                    </div>
+                    <div class="card-body">
+
+                        <div class="row">
+                        
+                          
+                               
+                                        <div class="col-md-6">
+                                            <input name="SearchText" type="text" placeholder="Search by FirstName ..." [(ngModel)]="SearchText" class="form-control">
+
+                                        </div>
+                                        <div class="col-md-6 btn1" >
+                                            <button type="submit" class="serchlist" (click)="Serach()">Search</button>
+                                       
+                                            <button type="submit" class="resetlist" (click)="Reset()">Reset</button>
+                                        </div>
+                           
+                               
+                           
+                        </div>
+
+                        <form #orgTypeForm="ngForm">
+                            <div class="row">
+                                <div class="card">
+                                    <div class="col-md-12">
+                                  
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered">
+                                                <thead class="thh">
+                                                    <tr class="titlecolor">
+                                                         <th>Id</th> 
+                                                        <th>SpecificationTitle</th>
+                                                        <!-- <th>DOB</th> -->
+                                                        <th>ServingSize</th>
+                                                        <th>AmountPer</th>
+                                                        <!-- <th>Email</th> -->
+                                                        <th>Energy</th>
+                                                        <th> TotalFat</th>
+                                                        <th>SaturatedFat</th>
+                                                        <th>Carbohydrate</th>
+                                                        <th>Protein</th>
+                                                        <th>Calcium</th>
+                                                        <th>Sodium</th>
+                                                        <th>Sugar</th>
+                                                        <th>AddedSugar</th>
+                                                        <th>Packing</th>
+                                                         <th>PackingDate</th>
+                                                         <th>BestBeforeDays</th>
+                                                         <th>OtherNutritions</th>
+                                                         <th>Storagetemp</th>
+                                                         
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr *ngFor="let i of ProductSpecificationList">
+                                                       
+                                                        <td>{{i.Id}} </td>
+                                                        <td>{{i.SpecificationTitle }}</td>
+                                                        <td>{{i.ServingSize }}</td>
+                                                        <td>{{i.AmountPer }}</td>
+                                                        <td>{{i.Energy}}</td>
+                                                         <td>{{i.TotalFat}}</td> 
+                                                        <td>{{i.SaturatedFat}}</td>
+                                                        <td>{{i.Carbohydrate}}</td>
+                                                        <td>{{i.Protein}}</td>
+                                                        <td>{{i.Calcium}}</td>
+                                                        <td>{{i.Sodium}}</td>
+                                                        <td>{{i.Sugar}}</td>
+                                                        <td>{{i.AddedSugar}}</td>
+                                                      
+                                                        <td>{{i.Packing}}</td>
+                                                        <td>{{i.PackagingDate}}</td>
+                                                        <td>{{i.BestBeforeDays}}</td>
+                                                        <td>{{i.OtherNutritions}}</td>
+
+                                                        
+                                                        <td > <i class="fa fa-eye"(click)="View(i.Id)" style="cursor: pointer;   color:  rgb(9, 97, 138); font-size: 20px; margin-right: 10px;"   aria-hidden="true" ></i>
+
+                                                            <i class="fa fa-pencil" (click)="Edit(i.Id)"   style="cursor: pointer; color: green;  font-size: 20px;  margin-right: 10px;"  aria-hidden="true" ></i> 
+                                                            <i class="fa fa-trash"(click)="Delete(i.Id)" style="cursor: pointer;   color:  rgb(199, 56, 5); font-size: 20px; margin-right: 10px;"   aria-hidden="true" ></i></td> 
+                                                        <!-- <td (click)="Edit(i.Id)" style="cursor: pointer;"><i class="fa fa-pencil" aria-hidden="true" style="margin-right: 7px;"></i>Edit</td>
+                                                        <td (click)="Delete(i.Id)" style="cursor: pointer;"><i class="fa fa-trash" aria-hidden="true" style="margin-right: 7px;"></i>Delete</td> -->
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col-md-12">
+
+                                </div>
+                            </div>
+
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,388 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <!-- <div class="col-md-2"></div> -->
+
+                    <div class="col-md-12" style="padding-top:37px">
+                        <div class="card">
+                            <div class="card-header card-header-danger">
+                                <h4 class="card-title">Exercise Routine</h4>
+                                <!-- <p class="card-category">Complete your profile</p> -->
+                            </div>
+                            <div class="card-body">
+                                <form #exerciseForm="ngForm">
+                                    <h4 class="card-title">Member Info</h4>
+                                    <div class="row ">
+
+                                        <div class="col-md-4">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="Member Name" [(ngModel)]="member.FirstName" #FirstName="ngModel" name="FirstName" class="example-full-width" type="text" required onkeypress="return (event.charCode > 64 && 
+                                            event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)">
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="Mobile Number" [(ngModel)]="member.Contact" #Contact="ngModel" onKeyPress="if(this.value.length==10) return false;" name="Contact" type="number" required>
+                                            </mat-form-field>
+
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="Emergency Contact" [(ngModel)]="member.EmergencyContact" #EmergencyContact="ngModel" onKeyPress="if(this.value.length==10) return false;" name="Mobile" type="EmergencyContact" required>
+                                            </mat-form-field>
+
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="Date Of Joining" [(ngModel)]="member.DateOfJoining" #DateOfJoining="ngModel" type="date" name="DateOfJoining" required>
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="Date Of CardIssue" [(ngModel)]="member.DateOfCardIssue" #DateOfCardIssue="ngModel" type="date" name="DateOfCardIssue" readonly required>
+                                            </mat-form-field>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="Injuries (If any)" [(ngModel)]="member.Injuries" #Injuries="ngModel" name="Injuries" class="example-full-width" type="text" required onkeypress="return (event.charCode > 64 && 
+                                            event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)">
+                                            </mat-form-field>
+                                        </div>
+
+
+
+
+                                        <div class="col-md-4">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="Age" [(ngModel)]="member.Age" #Age="ngModel" onKeyPress="if(this.value.length==3) return false;" name="Age" type="number" required>
+                                            </mat-form-field>
+
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="Height" [(ngModel)]="MemberHealthInfo.Height" #Height="ngModel" name="Height" type="number" required>
+                                            </mat-form-field>
+
+                                        </div>
+                                        <div class="col-md-4">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="Weight" [(ngModel)]="MemberHealthInfo.Weight" #Weight="ngModel" name="Weight" type="number" required>
+                                            </mat-form-field>
+
+                                        </div>
+
+
+                                    </div>
+                                    <!-- <h4 class="card-title">Exercise Routine</h4>
+                                    <div class="row col-md-12">
+
+                                        <div class="col-md-4">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="Day 01" name="Day1" class="example-full-width" type="text" required onkeypress="return (event.charCode > 64 && 
+                                                event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)">
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="Day 02" name="Day2" class="example-full-width" type="text" required onkeypress="return (event.charCode > 64 && 
+                                                event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)">
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="Day 03" name="Day3" class="example-full-width" type="text" required onkeypress="return (event.charCode > 64 && 
+                                                event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)">
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="Day 04" name="Day4" class="example-full-width" type="text" required onkeypress="return (event.charCode > 64 && 
+                                                event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)">
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="Day 05" name="Day5" class="example-full-width" type="text" required onkeypress="return (event.charCode > 64 && 
+                                                event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)">
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="Day 06" name="Day6" class="example-full-width" type="text" required onkeypress="return (event.charCode > 64 && 
+                                                event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)">
+                                            </mat-form-field>
+                                        </div>
+
+
+
+                                    </div> -->
+
+                                    <!--Start-->
+                                    <div id="MainForm">
+
+
+
+                                        <div class="list-group panel">
+
+                                            <a href="#form3" class="list-group-item list-group-item-success strong" data-toggle="collapse" data-parent="#MainForm">Weekly Exercise Routine <i i id="one" class="fa fa-angle-left plus" aria-hidden="true"> </i> <i id="two" class="fa fa-angle-down plus" aria-hidden="true"></i></a>
+                                            <div class="collapse submenufont" id="form3">
+                                                <div class="row">
+
+                                                    <div class="col-md-4">
+                                                        <mat-form-field class="example-full-width">
+                                                            <input matInput placeholder="Day 01" name="Day1" [(ngModel)]="ExerciseRoutine.Day1" #Day1="ngModel" class="example-full-width" type="text" required onkeypress="return (event.charCode > 64 && 
+                                                            event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)">
+                                                        </mat-form-field>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <mat-form-field class="example-full-width">
+                                                            <input matInput placeholder="Day 02" name="Day2" [(ngModel)]="ExerciseRoutine.Day2" #Day2="ngModel" class="example-full-width" type="text" required onkeypress="return (event.charCode > 64 && 
+                                                            event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)">
+                                                        </mat-form-field>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <mat-form-field class="example-full-width">
+                                                            <input matInput placeholder="Day 03" name="Day3" [(ngModel)]="ExerciseRoutine.Day3" #Day3="ngModel" class="example-full-width" type="text" required onkeypress="return (event.charCode > 64 && 
+                                                            event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)">
+                                                        </mat-form-field>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <mat-form-field class="example-full-width">
+                                                            <input matInput placeholder="Day 04" name="Day4" [(ngModel)]="ExerciseRoutine.Day4" #Day4="ngModel" class="example-full-width" type="text" required onkeypress="return (event.charCode > 64 && 
+                                                            event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)">
+                                                        </mat-form-field>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <mat-form-field class="example-full-width">
+                                                            <input matInput placeholder="Day 05" name="Day5" [(ngModel)]="ExerciseRoutine.Day5" #Day5="ngModel" class="example-full-width" type="text" required onkeypress="return (event.charCode > 64 && 
+                                                            event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)">
+                                                        </mat-form-field>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <mat-form-field class="example-full-width">
+                                                            <input matInput placeholder="Day 06" name="Day6" [(ngModel)]="ExerciseRoutine.Day6" #Day6="ngModel" class="example-full-width" type="text" required onkeypress="return (event.charCode > 64 && 
+                                                            event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)">
+                                                        </mat-form-field>
+                                                    </div>
+
+
+
+                                                </div>
+                                                <div class="row" style="margin:auto">
+                                                    <div class="col-md-5"></div>
+
+                                                    <button mat-raised-button type="submit" class="btn btn-danger" (click)="OnSubmit()">Save</button>
+
+                                                    <div class="col-md-2"></div>
+                                                </div>
+                                            </div>
+
+
+                                            <!--DayShow-->
+                                            <a href="#form20" class="list-group-item list-group-item-success strong" data-toggle="collapse" data-parent="#MainForm"> Exercise Routine List <i i id="one" class="fa fa-angle-left plus" aria-hidden="true"> </i> <i id="two" class="fa fa-angle-down plus" aria-hidden="true"></i></a>
+                                            <div class="collapse submenufont" id="form20">
+
+                                                <div class="row">
+
+                                                    <div class="col-md-12">
+                                                        <div class="card">
+
+                                                            <div class="table-responsive">
+                                                                <table class="table table-bordered">
+
+                                                                    <thead class="thh">
+
+                                                                        <tr class="titlecolor">
+
+                                                                            <th> <img src="../../assets/exrrcise.png" alt="Girl in a jacket" width="50" height="50"><br>Day1</th>
+                                                                            <th> <img src="../../assets/calendar.png" alt="Girl in a jacket" width="50" height="50"><br>Day2</th>
+                                                                            <th> <img src="../../assets/sets.png" alt="Girl in a jacket" width="50" height="50"><br>Day3</th>
+                                                                            <th> <img src="../../assets/weights.png" alt="Girl in a jacket" width="50" height="50"><br>Day4</th>
+                                                                            <th> <img src="../../assets/reps.png" alt="Girl in a jacket" width="50" height="50"><br>Day5</th>
+                                                                            <th> <img src="../../assets/reps.png" alt="Girl in a jacket" width="50" height="50"><br>Day6</th>
+
+
+                                                                            <th><img src="../../assets/delete.png" alt="Girl in a jacket" width="50" height="50"><br>Delete</th>
+
+                                                                        </tr>
+
+                                                                    </thead>
+
+                                                                    <tbody>
+                                                                        <tr *ngFor="let i of exerciseRoutinelist">
+
+
+                                                                            <td>{{i.Day1}}</td>
+                                                                            <td>{{i.Day2}}</td>
+                                                                            <!-- <td>{{i.MainExercise.Name}}</td> -->
+                                                                            <td>{{i.Day3}}</td>
+                                                                            <td>{{i.Day4}}</td>
+                                                                            <td>{{i.Day5}}</td>
+                                                                            <td>{{i.Day6}}</td>
+
+
+                                                                            <td (click)="Delete(i.Id)" style="cursor: pointer;"><i class="fa fa-trash" aria-hidden="true" style="margin-right: 7px;"></i>Delete</td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                            <!---->
+
+
+                                            <!--Start-->
+
+                                            <a href="#form1" class="list-group-item list-group-item-success strong" data-toggle="collapse" data-parent="#MainForm"> Add Exercise <i i id="one" class="fa fa-angle-left plus" aria-hidden="true"> </i> <i id="two" class="fa fa-angle-down plus" aria-hidden="true"></i> </a>
+                                            <div class="collapse submenufont" id="form1">
+                                                <div class="row">
+                                                    <!-- <div class="col-md-4">
+                                                        <div class="form-group pmd-textfield pmd-textfield-floating-label example-full-width">
+                                                            <label for="propeller-select">Main Exercise</label>
+                                                          
+                                                          
+                                                        </div>
+                    
+                                                    </div> -->
+
+                                                    <div class="col-md-6">
+                                                        <div class="form-group pmd-textfield pmd-textfield-floating-label example-full-width">
+                                                            <label for="propeller-select">Main Exercise</label>
+                                                            <select id="propeller-select" class="form-control" name="Id" [(ngModel)]=exercise.MainExercise.Id #Id="ngModel" (change)="MainExeChange($event)">
+                                                                <option *ngFor="let MainExercise of MainExerciselist" [value]="MainExercise.Id">
+                                                                    {{MainExercise.Name}} </option>
+                                                            </select>
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="form-group pmd-textfield pmd-textfield-floating-label example-full-width">
+                                                            <label for="propeller-select">Sub Exercise</label>
+                                                            <select id="propeller-select" class="form-control" name="Id" [(ngModel)]=exercise.SubExercise.Id #Id="ngModel" (change)="SubExeChange($event)">
+                                                                <option *ngFor="let SubExercise of SubExerciselist" [value]="SubExercise.Id">
+                                                                    {{SubExercise.Name}} </option>
+                                                            </select>
+                                                        </div>
+
+                                                    </div>
+
+
+
+                                                    <div class="col-md-4">
+                                                        <mat-form-field class="example-full-width">
+                                                            <input matInput placeholder="Sets" [(ngModel)]="exercise.Sets" #Sets="ngModel" name="Sets" class="example-full-width" type="text" required>
+                                                        </mat-form-field>
+                                                    </div>
+
+                                                    <div class="col-md-4">
+                                                        <mat-form-field class="example-full-width">
+                                                            <input matInput placeholder="Reps" [(ngModel)]="exercise.Reps" #Reps="ngModel" name="Reps" class="example-full-width" type="text" required>
+                                                        </mat-form-field>
+                                                    </div>
+
+
+                                                    <div class="col-md-4" style="margin:auto">
+                                                        <button mat-raised-button style="height: 37px; font-size: 12px; width:94px;  padding: 5px;" type="button" class="btn btn-danger" (click)="OnAdd()">Add</button>
+                                                    </div>
+
+
+
+
+
+
+                                                </div>
+                                            </div>
+
+                                            <!--End-->
+
+                                            <a href="#form2" class="list-group-item list-group-item-success strong" data-toggle="collapse" data-parent="#MainForm"> All Exercises List <i i id="one" class="fa fa-angle-left plus" aria-hidden="true"> </i> <i id="two" class="fa fa-angle-down plus" aria-hidden="true"></i></a>
+                                            <div class="collapse submenufont" id="form2">
+
+                                                <div class="row">
+
+                                                    <div class="col-md-12">
+                                                        <div class="card">
+
+                                                            <div class="table-responsive">
+                                                                <table class="table table-bordered">
+
+                                                                    <thead class="thh">
+
+                                                                        <tr class="titlecolor">
+
+                                                                            <th> <img src="../../assets/exrrcise.png" alt="Girl in a jacket" width="50" height="50"><br>MemberId</th>
+                                                                            <th> <img src="../../assets/calendar.png" alt="Girl in a jacket" width="50" height="50"><br>ExerciseId</th>
+                                                                            <th> <img src="../../assets/sets.png" alt="Girl in a jacket" width="50" height="50"><br>SubExercise</th>
+                                                                            <th> <img src="../../assets/weights.png" alt="Girl in a jacket" width="50" height="50"><br>Sets</th>
+                                                                            <th> <img src="../../assets/reps.png" alt="Girl in a jacket" width="50" height="50"><br>Reps</th>
+
+                                                                            <th><img src="../../assets/delete.png" alt="Girl in a jacket" width="50" height="50"><br>PDF</th>
+                                                                            <th><img src="../../assets/delete.png" alt="Girl in a jacket" width="50" height="50"><br>Delete</th>
+
+                                                                        </tr>
+
+                                                                    </thead>
+
+                                                                    <tbody>
+                                                                        <tr *ngFor="let i of exerciselist">
+
+
+                                                                            <td>{{i.MemberId}}</td>
+                                                                            <td>{{i.MainExercise.Id}}</td>
+                                                                            <!-- <td>{{i.MainExercise.Name}}</td> -->
+                                                                            <td>{{i.SubExercise.Name}}</td>
+                                                                            <td>{{i.Sets}}</td>
+                                                                            <td>{{i.Reps}}</td>
+                                                                            <td (click)="Exercise(i.MemberId)" style="cursor: pointer;"><img src="../../assets/exercise-R.png" alt="Girl in a jacket" width="50" height="50"><br></td>
+
+                                                                            <td (click)="Deletee(i.Id)" style="cursor: pointer;"><i class="fa fa-trash" aria-hidden="true" style="margin-right: 7px;"></i>Delete</td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+
+
+
+
+
+                                        </div>
+                                    </div>
+                                    <!--End-->
+
+
+
+
+                                    <!-- <div class="row"style="margin:auto">
+                                        <div class="col-md-5"></div>
+
+                                        <button mat-raised-button type="submit" class="btn btn-danger" (click)="OnSubmit()">Save</button>
+
+                                        <div class="col-md-2"></div>
+                                    </div> -->
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- <div class="col-md-2"></div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+.card-title{
+    text-align: center;
+
+}
+.orgdiv{
+ padding-top: 18px;
+}
+.Dropdown{
+    padding: inherit;
+}
+.dropdown {
+    position: relative;
+}
+.mat-form-field-appearance-fill .mat-form-field-flex {
+    /* border-radius: 0px 0px 0 0; */
+    /* padding: 0.75em 0px 0 .75em; */
+    padding: 2px 9px;
+    background-color: white !important;
+}
+.mat-form-field-wrapper {
+    padding-bottom: 10px !important;
+}
+

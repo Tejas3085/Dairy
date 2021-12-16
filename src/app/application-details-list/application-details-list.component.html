@@ -1,0 +1,77 @@
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+          <!-- <div class="col-md-2"></div> -->
+          <div class="col-md-12">
+              <div class="card">
+                  <div class="card-header card-header-danger">
+                      <h4 class="card-title">Application Details </h4>
+                      <p class="card-category"></p>
+                  </div>
+                  <div class="card-body">
+
+                      <div class="row">
+
+                          <div class="col-md-12">
+
+                              <div class="table-responsive">
+                                  <table class="table table-bordered">
+                                      <thead>
+                                          <tr class="titlecolor">
+                                          
+                                            <th>Brand Name</th>
+                                            <th>Investment Amount</th>
+                                            <th>Business Description</th>
+                                            <th>Rules</th>
+                                            <th>Facilities Provided</th>
+                                            <th>Status</th>
+                                            <!-- <th>Job Seeker Id</th> -->
+                                            <th>Name</th>
+                                            <!-- <th>Last Name</th> -->
+                                            <th>Mobile Number</th>
+                                            <th>Email Id</th>
+                                            <!-- <th>CreatedBy</th>
+                                            <th>CreatedDate</th> -->
+                                          </tr>
+                                      </thead>
+                                      <tbody>
+                                        <tr *ngFor="let i of applicationdetailslist">
+                                          
+                                          <td>{{i.BrandName}}</td>
+                                          <td>{{i.InvestmentAmount}}</td>
+                                          <td>{{i.BusinessDescription}}</td>
+                                          <td>{{i.Rules}}</td>
+                                          <td>{{i.FacilitiesProvided}}</td>
+                                          <td>{{i.Status}}</td>
+                                          <!-- <td>{{i.JobSeeker.Id}}</td> -->
+                                          <td>{{i.JobSeeker.FName}}&nbsp;{{i.JobSeeker.LName}}</td>
+                                          <!-- <td></td> -->
+                                          <td>{{i.JobSeeker.Mobile}}</td>
+                                          <td>{{i.JobSeeker.Email}}</td>
+                                          <!-- <td>{{i.CreatedBy}}</td>
+                                          <td>{{i.CreatedDate}}</td> -->
+
+                                          <!-- <td (click)="Edit(i.Id)" style="cursor: pointer;"><i class="fa fa-pencil" aria-hidden="true" style="margin-right: 7px;"></i>Edit</td>
+                                          <td (click)="Delete(i.Id)" style="cursor: pointer;"><i class="fa fa-trash" aria-hidden="true" style="margin-right: 7px;"></i>Delete</td> -->
+
+                                      </tr>
+                                      </tbody>
+                                  </table>
+                              </div>
+                          </div>
+                      </div>
+
+
+                      <div class="row">
+                          <div class="col-md-12">
+
+                          </div>
+                      </div>
+
+
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

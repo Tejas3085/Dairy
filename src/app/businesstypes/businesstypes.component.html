@@ -1,0 +1,71 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <div class="card">
+                    <form #businesstypeForm="ngForm">
+                        <div class="card-header card-header-danger">
+                            <h4 class="card-title">Business Types</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <!-- <div class="col-md-12">
+                                <div class="form-group pmd-textfield pmd-textfield-floating-label example-full-width">
+                                  
+                                    <select id="propeller-select" class="form-control" [(ngModel)]="businessType.Business_Type" #Business_Type="ngModel" name="Business_Type">
+                                <option>Business Types</option>
+                                <option>Food</option>
+                                <option>Restaurant</option>
+                                <option>Hotel/Lodge</option>
+                              
+                            </select> -->
+                                <div class="col-md-12">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Business Type" [(ngModel)]="businessType.Business_Type" name="Business_Type" #Business_Type="ngModel" type="text" required onkeypress="return (event.charCode > 64 && 
+                                    event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)">
+                                    </mat-form-field>
+                                    <!-- <div class="help-block" *ngIf=" userNameControl.touched && userNameControl.invalid ">User Name is required</div> -->
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <label for="avatar">Upload Logo:</label>
+
+                                <input type="file" id="avatar" [(ngModel)]="businessType.Photo" name="Photo" #Photo="ngModel" accept="image/png, image/jpeg" required>
+
+                            </div>
+<br>
+<div class="row">
+    <div class="col-md-5"></div>
+    <div class="">
+        <button mat-raised-button type="submit" [disabled]="businesstypeForm.invalid" class="btn btn-danger pulright" (click)="OnSubmit()">Submit</button>
+        <div class="clearfix"></div>
+    </div>
+    <div class="col-md-2"></div>
+</div>
+
+
+
+
+
+                        </div>
+                    </form>
+
+                </div>
+
+
+                <div class="row">
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4">
+
+                        <!-- <button mat-raised-button type="submit" [disabled]="businesstypeForm.invalid" class="btn btn-danger pulright" (click)="OnSubmit()">Submit</button> -->
+                        <!-- <div class="clearfix"></div> -->
+                    </div>
+                    <div class="col-md-4"></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2"></div>
+</div>

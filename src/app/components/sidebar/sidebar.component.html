@@ -1,0 +1,274 @@
+<!-- 
+<br>
+<br>
+<br>
+<div class="sidebar-wrapper">
+    <div *ngIf="isMobileMenu()">
+        <form class="navbar-form">
+            <span class="bmd-form-group">
+        <div class="input-group no-border">
+          <input type="text" value="" class="form-control" placeholder="Search...">
+          <button mat-raised-button type="submit" class="btn btn-white btn-round btn-just-icon">
+            <i class="material-icons">search</i>
+            <div class="ripple-container"></div>
+          </button>
+        </div>
+      </span>
+        </form>
+        <ul class="nav navbar-nav nav-mobile-menu">
+            <li class="nav-item">
+                <a class="nav-link" href="javascript:void(0)">
+                    <i class="material-icons">dashboard</i>
+                    <p>
+                        <span class="d-lg-none d-md-block">Stats</span>
+                    </p>
+                </a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link" href="javascript:void(0)" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="material-icons">notifications</i>
+                    <span class="notification">5</span>
+                    <p>
+                        <span class="d-lg-none d-md-block">Some Actions</span>
+                    </p>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="#">Mike John responded to your email</a>
+                    <a class="dropdown-item" href="#">You have 5 new tasks</a>
+                    <a class="dropdown-item" href="#">You're now friend with Andrew</a>
+                    <a class="dropdown-item" href="#">Another Notification</a>
+                    <a class="dropdown-item" href="#">Another One</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="javascript:void(0)">
+                    <i class="material-icons">person</i>
+                    <p>
+                        <span class="d-lg-none d-md-block">Account</span>
+                    </p>
+                </a>
+            </li>
+
+
+
+        </ul> -->
+
+<br>
+<br>
+<br>
+<div class="sidebar-wrapper">
+    <div *ngIf="isMobileMenu()">
+
+
+        <ul class="nav navbar-nav nav-mobile-menu">
+            <li class="nav-item">
+                <a class="nav-link" href="javascript:void(0)">
+                    <i class="material-icons">person</i>
+                    <p>
+                        <span class="d-lg-none d-md-block acountMob">Account</span>
+                    </p>
+                </a>
+            </li>
+
+
+
+
+        </ul>
+    </div>
+    <!-- <ul class="nav">
+        <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}} nav-item">
+            <a class="nav-link" [routerLink]="[menuItem.path]">
+                <i class="material-icons">{{menuItem.icon}}</i>
+                <p>{{menuItem.title}}</p>
+            </a>
+        </li>
+    </ul> -->
+
+
+
+
+    <!--New Code-->
+    <div id="MainMenu" *ngIf="!tp && !uses.flag">
+
+        <div class="row">
+            <div class="logo-img1">
+                <img src="/assets/logodemo.jpeg" style="    height: 90px;width: 260px; margin-left: 15px;" />
+            </div>
+        </div>
+
+        <div class="list-group panel">
+            <!-- <a routerLink="/dashboard" class="list-group-item list-group-item-success strong" data-toggle="collapse" data-parent="#MainMenu"><i class="fa fa-th-large" aria-hidden="true" >     </i>     Dashboard </a> -->
+     
+
+
+            <!-- Dairy Start********************** -->
+            <a routerLink="/dashboard" class="list-group-item list-group-item-success strong" data-toggle="collapse" data-parent="#MainMenu"><i class="fa fa-th-large" aria-hidden="true" >     </i>     Dashboard </a>
+
+            <a href="#demo21" class="list-group-item list-group-item-success strong" data-toggle="collapse" data-parent="#MainMenu"> <i class="fa fa-user-o" aria-hidden="true"></i> Distributor <i id="one" class="fa fa-angle-left plus" aria-hidden="true"> </i> <i id="two" class="fa fa-angle-down plus" aria-hidden="true"></i></a>
+            <div class="collapse submenufont" id="demo21">
+                <a routerLink="/distributor" routerLinkActive="active" class="list-group-item"><i class="fa fa-plus" aria-hidden="true"> </i>  Add Distributor</a>
+                <a routerLink="/distributorlist" routerLinkActive="active" class="list-group-item"> <i class="fa fa-eye" aria-hidden="true"> </i>View Distributor</a>
+            </div>
+
+            <a href="#demo22" class="list-group-item list-group-item-success strong" data-toggle="collapse" data-parent="#MainMenu"> <i class="fa fa-bitbucket-square" aria-hidden="true"></i> Product <i id="one" class="fa fa-angle-left plus" aria-hidden="true"> </i> <i id="two" class="fa fa-angle-down plus" aria-hidden="true"></i></a>
+            <div class="collapse submenufont" id="demo22">
+                <a routerLink="/product" routerLinkActive="active" class="list-group-item"><i class="fa fa-plus" aria-hidden="true"> </i>  Add Product</a>
+                <a routerLink="/productlist" routerLinkActive="active" class="list-group-item"> <i class="fa fa-eye" aria-hidden="true"> </i>View Product</a>
+            </div>
+
+            <a href="#demo29" class="list-group-item list-group-item-success strong" data-toggle="collapse" data-parent="#MainMenu"> <i class="fa fa-info-circle" aria-hidden="true"></i> Product Details <i id="one" class="fa fa-angle-left plus" aria-hidden="true"> </i> <i id="two" class="fa fa-angle-down plus" aria-hidden="true"></i></a>
+            <div class="collapse submenufont" id="demo29">
+                <a routerLink="/specification" routerLinkActive="active" class="list-group-item"><i class="fa fa-plus" aria-hidden="true"> </i>  Add Product Specification</a>
+                <a routerLink="/specificationlist" routerLinkActive="active" class="list-group-item"> <i class="fa fa-eye" aria-hidden="true"> </i>View Product Specification</a>
+                <a routerLink="/instruction" routerLinkActive="active" class="list-group-item"><i class="fa fa-plus" aria-hidden="true"> </i>  Add Instruction</a>
+                <a routerLink="/instructionlist" routerLinkActive="active" class="list-group-item"> <i class="fa fa-eye" aria-hidden="true"> </i>View Instruction</a>
+            </div>
+
+            <a href="#demo23" class="list-group-item list-group-item-success strong" data-toggle="collapse" data-parent="#MainMenu"> <i class="fa fa-tags" aria-hidden="true"></i> Subscription <i id="one" class="fa fa-angle-left plus" aria-hidden="true"> </i> <i id="two" class="fa fa-angle-down plus" aria-hidden="true"></i></a>
+            <div class="collapse submenufont" id="demo23">
+                <a routerLink="/subscription" routerLinkActive="active" class="list-group-item"><i class="fa fa-plus" aria-hidden="true"> </i>  Add Subscription</a>
+                <a routerLink="/subscriptionlist" routerLinkActive="active" class="list-group-item"> <i class="fa fa-eye" aria-hidden="true"> </i>View Subscription</a>
+            </div>
+
+            <a href="#demo24" class="list-group-item list-group-item-success strong" data-toggle="collapse" data-parent="#MainMenu"> <i class="fa fa-bookmark" aria-hidden="true"></i> Orders <i id="one" class="fa fa-angle-left plus" aria-hidden="true"> </i> <i id="two" class="fa fa-angle-down plus" aria-hidden="true"></i></a>
+            <div class="collapse submenufont" id="demo24">
+                <!-- <a routerLink="/instructor" routerLinkActive="active" class="list-group-item"><i class="fa fa-plus" aria-hidden="true"> </i>  Add Orders</a> -->
+                <a routerLink="/orderslist" routerLinkActive="active" class="list-group-item"> <i class="fa fa-eye" aria-hidden="true"> </i>View Orders</a>
+            </div>
+            <a href="#demo28" class="list-group-item list-group-item-success strong" data-toggle="collapse" data-parent="#MainMenu"> <i class="fa fa-pie-chart" aria-hidden="true"></i> Product Category <i id="one" class="fa fa-angle-left plus" aria-hidden="true"> </i> <i id="two" class="fa fa-angle-down plus" aria-hidden="true"></i></a>
+            <div class="collapse submenufont" id="demo28">
+                <a routerLink="/maincategory" routerLinkActive="active" class="list-group-item"><i class="fa fa-plus" aria-hidden="true"> </i>  Add Main Category</a>
+                <a routerLink="/maincategorylist" routerLinkActive="active" class="list-group-item"> <i class="fa fa-eye" aria-hidden="true"> </i>View Main Category</a>
+                <a routerLink="/subcategory" routerLinkActive="active" class="list-group-item"><i class="fa fa-plus" aria-hidden="true"> </i>  Add Sub Category</a>
+                <a routerLink="/subcategorylist" routerLinkActive="active" class="list-group-item"> <i class="fa fa-eye" aria-hidden="true"> </i>View Sub Category</a>
+            </div>
+
+            <a href="#demo25" class="list-group-item list-group-item-success strong" data-toggle="collapse" data-parent="#MainMenu"> <i class="fa fa-tag" aria-hidden="true"></i> User Subscription Details <i id="one" class="fa fa-angle-left plus" aria-hidden="true"> </i> <i id="two" class="fa fa-angle-down plus" aria-hidden="true"></i></a>
+            <div class="collapse submenufont" id="demo25">
+                <a routerLink="/usersubscriptiondetails" routerLinkActive="active" class="list-group-item"><i class="fa fa-plus" aria-hidden="true"> </i>  Add User Subscription Details</a>
+                <a routerLink="/usersubscriptiondetailslist" routerLinkActive="active" class="list-group-item"> <i class="fa fa-eye" aria-hidden="true"> </i>View User Subscription Details</a>
+            </div>
+
+            <a href="#demo30" class="list-group-item list-group-item-success strong" data-toggle="collapse" data-parent="#MainMenu"> <i class="fa fa-gift" aria-hidden="true"></i> Offers & Coupons <i id="one" class="fa fa-angle-left plus" aria-hidden="true"> </i> <i id="two" class="fa fa-angle-down plus" aria-hidden="true"></i></a>
+            <div class="collapse submenufont" id="demo30">
+                <a routerLink="/offer" routerLinkActive="active" class="list-group-item"><i class="fa fa-plus" aria-hidden="true"> </i>  Add Offer</a>
+                <a routerLink="/offerlist" routerLinkActive="active" class="list-group-item"> <i class="fa fa-eye" aria-hidden="true"> </i>View Offer</a>
+                
+            </div>
+
+            <a href="#demo26" class="list-group-item list-group-item-success strong" data-toggle="collapse" data-parent="#MainMenu"> <i class="fa fa-area-chart" aria-hidden="true"></i> Report <i  id="one" class="fa fa-angle-left plus" aria-hidden="true"> </i> <i id="two" class="fa fa-angle-down plus" aria-hidden="true"></i></a>
+            <div class="collapse submenufont" id="demo26">
+
+                <a routerLink="/user-plan-detail-report" routerLinkActive="active" class="list-group-item"><i class="fa fa-plus" aria-hidden="true"> </i>  User Plan </a>
+                <a routerLink="/membership-plan-history" routerLinkActive="active" class="list-group-item"><i class="fa fa-plus" aria-hidden="true"> </i>  Membership Plan</a>
+                <a routerLink="/user-workout-detail-history" routerLinkActive="active" class="list-group-item"><i class="fa fa-plus" aria-hidden="true"> </i> User Workout </a>
+                <a routerLink="/total-leads" routerLinkActive="active" class="list-group-item"><i class="fa fa-plus" aria-hidden="true"> </i> Total Leads </a>
+                <a routerLink="/payment-history-list" routerLinkActive="active" class="list-group-item"><i class="fa fa-plus" aria-hidden="true"> </i> Payment History </a>
+
+            </div>
+
+      
+
+            <a href="#demo27" class="list-group-item list-group-item-success strong" data-toggle="collapse" data-parent="#MainMenu"> <i class="fa fa-user-circle-o" aria-hidden="true"> </i> Admin Profile <i id="one" class="fa fa-angle-left plus" aria-hidden="true"> </i> <i id="two" class="fa fa-angle-down plus" aria-hidden="true"></i></a>
+            <div class="collapse submenufont" id="demo27">
+
+                <a routerLink="/adminregistration" routerLinkActive="active" class="list-group-item"><i class="fa fa-plus" aria-hidden="true"> </i> Registration</a>
+                <a routerLink="/registrationlist" routerLinkActive="active" class="list-group-item"> <i class="fa fa-eye" aria-hidden="true"> </i>View Registration Details</a>
+
+
+            </div>
+
+            <a routerLink="/Admin-Login" class="list-group-item list-group-item-success strong" data-toggle="collapse" data-parent="#MainMenu"><i class="fa fa-sign-out" aria-hidden="true" >     </i>   Logout</a>
+
+              <!-- Dairy End*********************** -->
+
+            <!-- <a routerLink="/AppointmentList" class="list-group-item list-group-item-success strong" data-toggle="collapse" data-parent="#MainMenu"><i class="fa fa-list-alt" aria-hidden="true" >     </i>  Appointment List</a>
+
+
+            <a href="#demo1" class="list-group-item list-group-item-success strong" data-toggle="collapse" data-parent="#MainMenu"> <i class="fa fa-user" aria-hidden="true"> </i>Product <i i id="one" class="fa fa-angle-left plus" aria-hidden="true"> </i> <i id="two" class="fa fa-angle-down plus" aria-hidden="true"></i> </a>
+            <div class="collapse submenufont" id="demo1">
+                <a routerLink="/Addproduct" routerLinkActive="active" class="list-group-item"><i class="fa fa-plus" aria-hidden="true"> </i> Add Product</a>
+                <a routerLink="/member-list" routerLinkActive="active" class="list-group-item"> <i class="fa fa-eye" aria-hidden="true"> </i>View Member</a>
+            </div>
+
+            <a href="#demo2" class="list-group-item list-group-item-success strong" data-toggle="collapse" data-parent="#MainMenu"> <i class="fa fa-address-card-o" aria-hidden="true"> </i> Membership plan <i i id="one" class="fa fa-angle-left plus" aria-hidden="true"> </i> <i id="two" class="fa fa-angle-down plus" aria-hidden="true"></i></a>
+            <div class="collapse submenufont" id="demo2">
+                <a routerLink="/membership-plan" routerLinkActive="active" class="list-group-item"><i class="fa fa-plus" aria-hidden="true"> </i>  Add Membership plan</a>
+                <a routerLink="/membership-plan-list" routerLinkActive="active" class="list-group-item"> <i class="fa fa-eye" aria-hidden="true"> </i>View Membership plan</a>
+            </div>
+
+            <a href="#demo3" class="list-group-item list-group-item-success strong" data-toggle="collapse" data-parent="#MainMenu"> <i class="fa fa-user-o" aria-hidden="true"></i> Instructor <i i id="one" class="fa fa-angle-left plus" aria-hidden="true"> </i> <i id="two" class="fa fa-angle-down plus" aria-hidden="true"></i></a>
+            <div class="collapse submenufont" id="demo3">
+                <a routerLink="/instructor" routerLinkActive="active" class="list-group-item"><i class="fa fa-plus" aria-hidden="true"> </i>  Add Instructor</a>
+                <a routerLink="/instructor-list" routerLinkActive="active" class="list-group-item"> <i class="fa fa-eye" aria-hidden="true"> </i>View Instructor</a>
+            </div>
+
+            <a href="#demo4" class="list-group-item list-group-item-success strong" data-toggle="collapse" data-parent="#MainMenu"> <i class="fa fa-universal-access" aria-hidden="true"></i> Workout Type <i i id="one" class="fa fa-angle-left plus" aria-hidden="true"> </i> <i id="two" class="fa fa-angle-down plus" aria-hidden="true"></i> </a>
+            <div class="collapse submenufont" id="demo4">
+                <a routerLink="/workout-type" routerLinkActive="active" class="list-group-item"><i class="fa fa-plus" aria-hidden="true"> </i> Add Workout Type</a>
+                <a routerLink="/workout-type-list" routerLinkActive="active" class="list-group-item"> <i class="fa fa-eye" aria-hidden="true"> </i>View Workout Type</a>
+            </div>
+
+
+            <a href="#demo5" class="list-group-item list-group-item-success strong" data-toggle="collapse" data-parent="#MainMenu"> <i class="fa fa-heartbeat" aria-hidden="true"></i> Member Health Info <i i id="one" class="fa fa-angle-left plus" aria-hidden="true"> </i> <i id="two" class="fa fa-angle-down plus" aria-hidden="true"></i> </a>
+            <div class="collapse submenufont" id="demo5">
+                <a routerLink="/member-health-info" routerLinkActive="active" class="list-group-item"><i class="fa fa-plus" aria-hidden="true"> </i> Add Member Health Info</a>
+                <a routerLink="/member-health-info-list" routerLinkActive="active" class="list-group-item"> <i class="fa fa-eye" aria-hidden="true"> </i>View Member Health Info</a>
+            </div>
+
+            <a href="#demo6" class="list-group-item list-group-item-success strong" data-toggle="collapse" data-parent="#MainMenu"> <i class="fa fa-address-card-o" aria-hidden="true"> </i> User Workout Details <i i id="one" class="fa fa-angle-left plus" aria-hidden="true"> </i> <i id="two" class="fa fa-angle-down plus" aria-hidden="true"></i></a>
+            <div class="collapse submenufont" id="demo6">
+                <a routerLink="/user-workout-details" routerLinkActive="active" class="list-group-item"><i class="fa fa-plus" aria-hidden="true"> </i> Add  User Workout Details </a>
+                <a routerLink="/user-workout-details-list" routerLinkActive="active" class="list-group-item"> <i class="fa fa-eye" aria-hidden="true"> </i>View User Workout Details </a>
+            </div>
+
+            <a href="#demo7" class="list-group-item list-group-item-success strong" data-toggle="collapse" data-parent="#MainMenu"> <i class="fa fa-list-alt" aria-hidden="true"></i> User Plan Detail <i i id="one" class="fa fa-angle-left plus" aria-hidden="true"> </i><i id="two" class="fa fa-angle-down plus" aria-hidden="true"></i> </a>
+            <div class="collapse submenufont" id="demo7">
+                <a routerLink="/user-plan-detail" routerLinkActive="active" class="list-group-item"><i class="fa fa-plus" aria-hidden="true"> </i>  Add  User Plan Detail </a>
+                <a routerLink="/user-plan-details-list" routerLinkActive="active" class="list-group-item"> <i class="fa fa-eye" aria-hidden="true"> </i>View User Plan Detail </a>
+            </div>
+            <a href="#demo13" class="list-group-item list-group-item-success strong" data-toggle="collapse" data-parent="#MainMenu"> <i class="fa fa-user-circle-o" aria-hidden="true"> </i> Enquiry <i i id="one" class="fa fa-angle-left plus" aria-hidden="true"> </i> <i id="two" class="fa fa-angle-down plus" aria-hidden="true"></i></a>
+            <div class="collapse submenufont" id="demo13">
+
+                <a routerLink="/inquiry" routerLinkActive="active" class="list-group-item"><i class="fa fa-plus" aria-hidden="true"> </i> Enquiry</a>
+                <a routerLink="/enquirylist" routerLinkActive="active" class="list-group-item"><i class="fa fa-plus" aria-hidden="true"> </i> Enquiry List</a>
+
+
+            </div>
+          
+            <a href="#demo11" class="list-group-item list-group-item-success strong" data-toggle="collapse" data-parent="#MainMenu"> <i class="fa fa-user-circle-o" aria-hidden="true"> </i> Report <i i id="one" class="fa fa-angle-left plus" aria-hidden="true"> </i> <i id="two" class="fa fa-angle-down plus" aria-hidden="true"></i></a>
+            <div class="collapse submenufont" id="demo11">
+
+                <a routerLink="/user-plan-detail-report" routerLinkActive="active" class="list-group-item"><i class="fa fa-plus" aria-hidden="true"> </i>  User Plan </a>
+                <a routerLink="/membership-plan-history" routerLinkActive="active" class="list-group-item"><i class="fa fa-plus" aria-hidden="true"> </i>  Membership Plan</a>
+                <a routerLink="/user-workout-detail-history" routerLinkActive="active" class="list-group-item"><i class="fa fa-plus" aria-hidden="true"> </i> User Workout </a>
+                <a routerLink="/total-leads" routerLinkActive="active" class="list-group-item"><i class="fa fa-plus" aria-hidden="true"> </i> Total Leads </a>
+                <a routerLink="/payment-history-list" routerLinkActive="active" class="list-group-item"><i class="fa fa-plus" aria-hidden="true"> </i> Payment History </a>
+
+            </div>
+
+
+
+            <a href="#demo10" class="list-group-item list-group-item-success strong" data-toggle="collapse" data-parent="#MainMenu"> <i class="fa fa-user-circle-o" aria-hidden="true"> </i> Admin Profile <i i id="one" class="fa fa-angle-left plus" aria-hidden="true"> </i> <i id="two" class="fa fa-angle-down plus" aria-hidden="true"></i></a>
+            <div class="collapse submenufont" id="demo10">
+
+                <a routerLink="/adminregistration" routerLinkActive="active" class="list-group-item"><i class="fa fa-plus" aria-hidden="true"> </i> Registration</a>
+
+
+            </div>
+
+
+
+            <a routerLink="/mainexercise" class="list-group-item list-group-item-success strong" data-toggle="collapse" data-parent="#MainMenu"><i class="fa fa-bookmark" aria-hidden="true" >     </i>   Add Main Exercise </a>
+
+            <a routerLink="/attendance-status" class="list-group-item list-group-item-success strong" data-toggle="collapse" data-parent="#MainMenu"><i class="fa fa-bookmark" aria-hidden="true" >     </i>   Attendance Status </a>
+
+
+
+
+
+            <a routerLink="/Admin-Login" class="list-group-item list-group-item-success strong" data-toggle="collapse" data-parent="#MainMenu"><i class="fa fa-sign-out" aria-hidden="true" >     </i>   Logout</a> -->
+
+        </div>
+    </div>
+</div>

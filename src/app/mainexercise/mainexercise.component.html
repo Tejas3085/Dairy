@@ -1,0 +1,118 @@
+<p>workout-type works!</p>
+
+
+
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8"style="padding-top:18px">
+                <div class="card">
+                    <form #mainExerciseForm="ngForm">
+                        <div class="card-header card-header-danger">
+                            <h4 class="card-title">Main Exercise</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Name" [(ngModel)]="mainExercise.Name" #Name="ngModel" name="Name" class="example-full-width" type="text" required onkeypress="return (event.charCode > 64 && 
+                                    event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)">
+                                    </mat-form-field>
+                                </div>
+
+
+<!-- 
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Description" [(ngModel)]="mainExercise.ExerciseDesc" #ExerciseDesc="ngModel" name="ExerciseDesc" class="example-full-width" type="text" required onkeypress="return (event.charCode > 64 && 
+                                    event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)">
+                                    </mat-form-field>
+                                </div> -->
+
+
+
+                                <div class="col-md-12">
+                                    <mat-form-field class="example-full-width">
+                                        <textarea matInput placeholder="Description" [(ngModel)]="mainExercise.ExerciseDesc" #ExerciseDesc="ngModel" name="ExerciseDesc" class="example-full-width" type="text" required onkeypress="return (event.charCode > 64 && 
+                                    event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)"></textarea>
+                                    </mat-form-field>
+                                </div>
+
+
+
+
+                            </div>
+                            <div class="row"style="margin:auto">
+                                <div class="col-md-5"></div>
+
+                                <button mat-raised-button type="submit" [disabled]="mainExerciseForm.invalid" class="btn btn-danger" (click)="OnSubmit()">Submit</button>
+                                <div class="clearfix"></div>
+                               
+                                <div class="col-md-2"></div>
+                                <a routerLink="/subecercise" class="" >   Add Sub Exercise </a>
+                            </div>
+
+                        </div>
+                    </form>
+<!---->
+    <!--Start-->
+    <!-- <div id="MainForm">
+
+
+
+        <div class="list-group panel">
+    <a href="#form21" class="list-group-item list-group-item-success strong" data-toggle="collapse" data-parent="#MainForm"> Add Sub Exercise <i i id="one" class="fa fa-angle-left plus" aria-hidden="true"> </i> <i id="two" class="fa fa-angle-down plus" aria-hidden="true"></i> </a>
+    <div class="collapse submenufont" id="form21">
+        <div class="row col-md-12">
+         
+
+            <div class="col-md-4">
+                <div class="form-group pmd-textfield pmd-textfield-floating-label example-full-width">
+                    <label for="propeller-select">Main Exercise</label>
+                    <select id="propeller-select" class="form-control" name="Id" [(ngModel)]=exercise.MainExercise.Id #Id="ngModel" (change)="MainExeChange($event)">
+                        <option *ngFor="let MainExercise of MainExerciselist" [value]="MainExercise.Id">
+                            {{MainExercise.Name}} </option>
+                    </select>
+                </div>
+
+            </div>
+
+            <div class="col-md-4">
+                 <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Sub Exercise Name" [(ngModel)]="exercise.SubExercise" #SubExercise="ngModel" name="SubExercise" class="example-full-width" type="text" required onkeypress="return (event.charCode > 64 && 
+                    event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)">
+                </mat-form-field> 
+            </div>
+         
+
+            <div class="col-md-4">
+                 <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Description" [(ngModel)]="exercise.Description" #Description="ngModel" name="Description" class="example-full-width" type="text" required>
+                </mat-form-field> 
+            </div>
+         
+         
+          
+        
+
+            <button mat-raised-button style="height: 35px; font-size: 10px;  padding: 5px;" type="button" class="btn btn-danger" (click)="OnAdd()">Add</button>
+
+
+
+
+
+
+
+        </div>
+    </div>
+                </div></div> -->
+<!---->                    
+
+                    <!-- BMI Cal -->
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+    </div>
+</div>

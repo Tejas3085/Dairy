@@ -1,0 +1,103 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-2"></div>
+
+                    <div class="col-md-8">
+                        <div class="card">
+                            <div class="card-header card-header-danger">
+                                <h4 class="card-title">Organization Plan Details</h4>
+                                <!-- <p class="card-category">Complete your profile</p> -->
+                            </div>
+                            <div class="card-body">
+                                <form #OrgPlanDetailsForm="ngForm">
+
+                                    <div class="row">
+
+                                        <div class="col-md-6">
+                                            <div class="form-group pmd-textfield pmd-textfield-floating-label example-full-width">
+                                                <label for="propeller-select">Organization</label>
+                                                <select id="propeller-select" [(ngModel)]="orgplandetails.OrgnizationId" #OrgnizationId="ngModel" name="OrgnizationId" class="form-control">
+                                                    <!-- id="propeller-select" class="form-control" [(ngModel)]="postJobMaster.JobLocation" #JobLocation="ngModel" name="JobLocation" -->
+                                                    <option *ngFor="let Organization of OrganizationList"> {{Organization.Name}} </option>
+                                                    <!-- <option>Organization</option>
+                                            <option>IT</option>
+                                            <option>Pharma</option>
+                                            <option>Manufacturing</option> -->
+                                          
+                                        </select>
+
+
+                                                <!-- <select id="propeller-select" class="form-control" name="CountryId" [(ngModel)]=organizationMaster.CountryId #CountryId="ngModel" >
+                                            <option *ngFor="let Country of CountryList"> {{Country.Name}} </option>
+                                    
+                                  </select> -->
+                                            </div>
+
+
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="form-group pmd-textfield pmd-textfield-floating-label example-full-width">
+                                                <label for="propeller-select">Plan</label>
+                                                <select id="propeller-select" [(ngModel)]="orgplandetails.PlanId" #PlanId="ngModel" name="PlanId" class="form-control">
+                                                    <option *ngFor="let Plan of PlanList"> {{Plan.Name}} </option>
+                                                    <!-- <option>Plans</option>
+                                            <option>abc</option>
+                                            <option>abc</option>
+                                            <option>abc</option> -->
+                                          
+                                        </select>
+                                            </div>
+
+
+                                            <!-- <div class="col-md-6">
+                                                <mat-form-field appearance="fill" style="width: 138px !important">
+                                                    <mat-label>Plan</mat-label>
+                                                    <mat-select>
+                                                        <mat-option *ngFor="let Plan of PlanList" [value]="Plan.Name">
+                                                            {{Plan.Name}}
+                                                        </mat-option>
+                                                    </mat-select>
+                                                </mat-form-field>
+                                            </div> -->
+
+                                        </div>
+
+
+
+                                        <div class="col-md-6">
+                                            <!-- <p>All feilds are required. </p> -->
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="Status" [(ngModel)]="orgplandetails.Status" #Status="ngModel" pattern="[a-zA-Z]*" name="Status" required type="text" onkeypress="return (event.charCode > 64 && 
+                                                    event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)">
+                                            </mat-form-field>
+                                            <div class="help-block" *ngIf=" Status.touched && Status.errors?.pattern">Status is invalid</div>
+                                        </div>
+
+
+
+                                    </div>
+
+
+
+                                    <div class="row">
+                                        <div class="col-md-5"></div>
+                                       
+                                            <button mat-raised-button type="submit" class="btn btn-danger" (click)="OnSubmit()">Save</button>
+                                        
+                                        <div class="col-md-2"></div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-2"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

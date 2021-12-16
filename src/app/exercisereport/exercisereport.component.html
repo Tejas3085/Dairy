@@ -1,0 +1,215 @@
+<div class="main-content">
+    <div class="container-fluid">
+
+
+
+        <div class="" style="justify-content: center;">
+            <button (click)="pdfpage()" id="btnprint">Get Invoice</button>
+        </div>
+        <div class="card" id="contentToConvert">
+
+
+            <div class="card-body">
+
+
+                <hr>
+                <!--Start-->
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">Member Info.</h4>
+                        <!-- <p class="card-category">Complete your profile</p> -->
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+
+
+                            <table style="width:75%">
+                                <tr>
+                                    <th class="uppertbl">Name:</th>
+                                    <td class="uppertbl">{{member.FirstName}} {{member.LastName}}</td>
+                                </tr>
+                                <tr>
+                                    <th class="uppertbl">Contact:</th>
+                                    <td class="uppertbl">{{member.Contact}}</td>
+                                </tr>
+                                <tr>
+                                    <th class="uppertbl">Emergency Contact:</th>
+                                    <td class="uppertbl">{{member.EmergencyContact}}</td>
+                                </tr>
+
+                                <tr>
+                                    <th class="uppertbl"> Date Of Joining:</th>
+                                    <td class="uppertbl">{{member.DateOfJoining}}</td>
+                                </tr>
+                                <tr>
+                                    <th class="uppertbl"> Date Of CardIssue:</th>
+                                    <td class="uppertbl">{{member.DateOfCardIssue}}</td>
+                                </tr>
+                                <tr>
+                                    <th class="uppertbl"> Injuries:</th>
+                                    <td class="uppertbl">{{member.Injuries}}</td>
+                                </tr>
+                                <tr>
+                                    <th class="uppertbl"> Age:</th>
+                                    <td class="uppertbl">{{member.Age}}</td>
+                                </tr>
+                                <tr>
+                                    <th class="uppertbl"> Height:</th>
+                                    <td class="uppertbl">{{memberHealthInfo.Height}}</td>
+                                </tr>
+                                <tr>
+                                    <th class="uppertbl"> Weight:</th>
+                                    <td class="uppertbl">{{memberHealthInfo.Weight}}</td>
+                                </tr>
+                                <tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!---->
+                <div class="card">
+                    <!-- <div class="row">
+
+
+                        <br>
+
+                        <div class="col-md-12">
+
+                            <h4>Name:</h4> {{member.FirstName}} {{member.LastName}}
+                            <h4>Contact:</h4>{{member.Contact}}
+                            <h4>Emergency Contact:</h4>{{member.EmergencyContact}}
+                        </div>
+                        <div class="col-md-12">
+                            <h4>Date Of Joining:</h4>{{member.DateOfJoining}}
+                            <h4>Date Of CardIssue:</h4>{{member.DateOfCardIssue}}
+                            <h4>Injuries</h4>{{member.Injuries}}
+                        </div>
+                        <div class="col-md-12">
+                            <h4>Age:</h4>{{member.Age}}
+                            <h4>Height:</h4>{{memberHealthInfo.Height}}
+                            <h4>Weight:</h4>{{memberHealthInfo.Weight}}
+
+
+                        </div>
+
+                    </div> -->
+                    <!---->
+
+
+                    <div class="row">
+
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header card-header-danger">
+                                    <h4 class="card-title">Weekly Routine</h4>
+                                    <!-- <p class="card-category">Complete your profile</p> -->
+                                </div>
+
+                                <div class="table-responsive">
+                                    <table class="table table-bordered">
+
+                                        <thead class="thh">
+
+                                            <tr class="titlecolor">
+
+                                                <th> Monday</th>
+                                                <th> Tuesday</th>
+                                                <th> Wednesday</th>
+                                                <th> Thursday</th>
+                                                <th> Friday</th>
+                                                <th> Saturday</th>
+
+                                                <!-- 
+                                                                    <th><img src="../../assets/delete.png" alt="Girl in a jacket" width="50" height="50"><br>Delete</th> -->
+
+                                            </tr>
+
+                                        </thead>
+
+                                        <tbody>
+                                            <tr *ngFor="let i of exerciseRoutinelist">
+
+
+                                                <td>{{i.Day1}}</td>
+                                                <td>{{i.Day2}}</td>
+
+                                                <td>{{i.Day3}}</td>
+                                                <td>{{i.Day4}}</td>
+                                                <td>{{i.Day5}}</td>
+                                                <td>{{i.Day6}}</td>
+
+
+                                                <!-- <td (click)="Delete(i.Id)" style="cursor: pointer;"><i class="fa fa-trash" aria-hidden="true" style="margin-right: 7px;"></i>Delete</td> -->
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- </form> -->
+                    </div>
+
+
+                    <div class="row">
+
+                        <div class="col-md-12">
+                            <div class="card">
+                                <div class="card-header card-header-danger">
+                                    <h4 class="card-title">Exercises</h4>
+                                    <!-- <p class="card-category">Complete your profile</p> -->
+                                </div>
+
+                                <div class="table-responsive">
+                                    <table class="table table-bordered">
+
+                                        <thead class="thh">
+
+                                            <tr class="titlecolor">
+
+                                                <th> MemberId</th>
+                                                <th>ExerciseId</th>
+                                                <th>SubExercise</th>
+                                                <th>Sets</th>
+                                                <th> Reps</th>
+
+
+
+
+                                            </tr>
+
+                                        </thead>
+
+                                        <tbody>
+                                            <tr *ngFor="let i of exerciselist">
+
+
+                                                <td>{{i.MemberId}}</td>
+                                                <td>{{i.MainExercise.Id}}</td>
+                                                <!-- <td>{{i.MainExercise.Name}}</td> -->
+                                                <td>{{i.SubExercise.Name}}</td>
+                                                <td>{{i.Sets}}</td>
+                                                <td>{{i.Reps}}</td>
+                                                <!-- <td (click)="Exercise(i.MemberId)" style="cursor: pointer;"><img src="../../assets/exercise-R.png" alt="Girl in a jacket" width="50" height="50"><br></td>
+
+                                                <td (click)="Deletee(i.Id)" style="cursor: pointer;"><i class="fa fa-trash" aria-hidden="true" style="margin-right: 7px;"></i>Delete</td> -->
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+
+    </div>

@@ -1,0 +1,42 @@
+<p>otp works!</p>
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+                <div class="card">
+
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">Forgot Password</h4>
+                    </div>
+                    <div class="card-body">
+
+                        <div class="row">
+
+
+                            <div class="col-md-12">
+                                <mat-form-field class="example-full-width">
+                                    <input matInput placeholder="Mobile Number" [(ngModel)]="registerOTP.Mobile" name="Mobile" #mobileControl="ngModel" type="text" required>
+                                </mat-form-field>
+                                <div class="help-block" *ngIf=" mobileControl.touched && mobileControl.errors?.pattern ">Mobile number is invalid</div>
+                            </div>
+
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-4"></div>
+                            <div class="col-md-4">
+
+                                <button mat-raised-button type="submit" class="btn btn-danger pulright" (click)="OnSubmit()">Send OTP</button>
+                                <!-- <div class="clearfix"></div> -->
+                            </div>
+                            <div class="col-md-4"></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3"></div>
+        </div>
+    </div>
+</div>

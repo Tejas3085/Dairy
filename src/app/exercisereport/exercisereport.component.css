@@ -1,0 +1,44 @@
+.form-inline {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    background-color: white;
+}
+
+.form-inline label {
+    margin: 20px 117px 9px 0;
+}
+
+.col-md-4 h3 {
+    margin-top: 23px;
+    color: #ff9800;
+    font: caption;
+    font-size: 25px;
+}
+
+.card-body {
+    background-color: #f1efef
+}
+
+.col-md-4 {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    font-family: ui-rounded;
+}
+
+.uppertbl {
+    padding-left: 15px;
+    font-size: 16px;
+}
+
+.alnright {
+    text-align: right;
+}
+
+table thead tr th {
+    font-size: 1.063rem;
+    background-color: aliceblue;
+    border-style: solid;
+}

@@ -1,0 +1,77 @@
+
+
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8"style="padding-top:15px">
+                <div class="card">
+                    <form #InstructionsForm="ngForm">
+                        <div class="card-header card-header-danger">
+                            <h4 class="card-title">Product Instructions </h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+
+                           
+                                
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="InstructionTitle " [(ngModel)]="productInstructions.InstructionTitle" #InstructionTitleControl="ngModel" name="InstructionTitle" class="example-full-width" type="text" required onkeypress="return (event.charCode > 64 && 
+                                    event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)">
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <textarea matInput placeholder="ProductInstr1" [(ngModel)]="productInstructions.ProductInstr1" #ProductInstr1="ngModel" name="ProductInstr1" class="example-full-width" type="text" required></textarea>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <textarea matInput placeholder="ProductInstr2" [(ngModel)]="productInstructions.ProductInstr2" #ProductInstr2="ngModel" name="ProductInstr2" class="example-full-width" type="text" required></textarea>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <textarea matInput placeholder="ProductInstr3" [(ngModel)]="productInstructions.ProductInstr3" #ProductInstr3="ngModel" name="ProductInstr3" class="example-full-width" type="text" required></textarea>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <textarea matInput placeholder="ProductInstr4" [(ngModel)]="productInstructions.ProductInstr4" #ProductInstr4="ngModel" name="ProductInstr4" class="example-full-width" type="text" required></textarea>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <textarea matInput placeholder="ProductInstr5" [(ngModel)]="productInstructions.ProductInstr5" #ProductInstr5="ngModel" name="ProductInstr5" class="example-full-width" type="text" required></textarea>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <textarea matInput placeholder="ProductInstr6" [(ngModel)]="productInstructions.ProductInstr6" #ProductInstr6="ngModel" name="ProductInstr6" class="example-full-width" type="text" required></textarea>
+                                    </mat-form-field>
+                                </div>
+                             
+
+
+                              
+                            </div>
+                            <div class="row"style="margin:auto">
+                                <div class="col-md-5"></div>
+
+                                <button mat-raised-button type="submit" class="btn btn-danger" [disabled]="InstructionsForm.invalid" (click)="OnSubmit()">Submit</button>
+                                <div class="clearfix"></div>
+
+                                <div class="col-md-2"></div>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+    </div>
+</div>
+
+

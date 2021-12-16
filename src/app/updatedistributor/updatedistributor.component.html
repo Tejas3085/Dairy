@@ -1,0 +1,234 @@
+
+
+
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-2"></div>
+
+                    <div class="col-md-8"style="padding-top:13px">
+                        <div class="card">
+                            <div class="card-header card-header-danger">
+                                <h4 class="card-title">Distributor</h4>
+                                <!-- <p class="card-category">Complete your profile</p> -->
+                            </div>
+                            <div class="card-body">
+                                <form #distributorForm="ngForm">
+
+                                    <div class="row">
+
+                                        <div class="col-md-6">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="Buisness Name" [(ngModel)]="distributor.BuisnessName" #BuisnessNameControl="ngModel" name="BuisnessName" class="example-full-width" type="text" required onkeypress="return (event.charCode > 64 && 
+                                            event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)">
+                                            </mat-form-field>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="Name" [(ngModel)]="distributor.Name" #NameControl="ngModel" name="Name" class="example-full-width" type="text" required onkeypress="return (event.charCode > 64 && 
+                                            event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)">
+                                            </mat-form-field>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <mat-form-field class="example-full-width">
+                                                <textarea matInput placeholder="Address" [(ngModel)]="distributor.Address" #AddressControl="ngModel" name="Address" class="example-full-width" type="text" required></textarea>
+                                            </mat-form-field>
+                                        </div>
+
+                                        <!-- <div class="col-md-6">
+                                            <div class="form-group pmd-textfield pmd-textfield-floating-label example-full-width">
+                                                <label for="propeller-select">Country</label>
+                                                <select id="propeller-select" class="form-control" name="Country" [(ngModel)]=distributor.Country #Country="ngModel" (change)="MainExeChange($event)">
+                                                    <option *ngFor="let Country of distributorlist" [value]="Country.Id">
+                                                        {{Country.Name}} </option>
+                                                        <option [value]="1">India</option>
+                                                </select>
+                                            </div>
+        
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="form-group pmd-textfield pmd-textfield-floating-label example-full-width">
+                                                <label for="propeller-select">State</label>
+                                                <select id="propeller-select" class="form-control" name="Country" [(ngModel)]=distributor.State #State="ngModel" (change)="MainExeChange($event)">
+                                                    <option *ngFor="let State of distributorlist" [value]="State.Id">
+                                                        {{State.Name}} </option>
+                                                        <option [value]="1">Maharashtra</option>
+                                                </select>
+                                            </div>
+        
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="form-group pmd-textfield pmd-textfield-floating-label example-full-width">
+                                                <label for="propeller-select">City</label>
+                                                <select id="propeller-select" class="form-control" name="City" [(ngModel)]=distributor.City #City="ngModel" (change)="MainExeChange($event)">
+                                                    <option *ngFor="let State of distributorlist" [value]="City.Id">
+                                                        {{City.Name}} </option>
+                                                    <option [value]="1">Pune</option>
+                                                </select>
+                                            </div> 
+        
+                                        </div> -->
+                                        <div class="col-md-6">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="Email ID" [(ngModel)]="distributor.Email" #EmailControl="ngModel" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$" name="Email" type="email" required>
+                                            </mat-form-field>
+                                            <div class="help-block" *ngIf=" EmailControl.errors?.pattern && EmailControl.touched ">Email is invalid</div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="Mobile Number" [(ngModel)]="distributor.Mobile" #MobileControl="ngModel" onKeyPress="if(this.value.length==10) return false;" name="Mobile" type="number" required>
+                                            </mat-form-field>
+                                            <div class="help-block" *ngIf=" MobileControl.touched && MobileControl.errors?.pattern ">Mobile number is invalid</div>
+                                        </div>
+                                       
+                                        <div class="col-md-6">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="PostalCode Number" [(ngModel)]="distributor.PostalCode" #PostalCodeControl="ngModel" onKeyPress="if(this.value.length==6) return false;" name="PostalCode" type="number" required>
+                                            </mat-form-field>
+                                            <div class="help-block" *ngIf=" PostalCodeControl.touched && PostalCodeControl.errors?.pattern ">PostalCode number is invalid</div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="Start Date" [(ngModel)]="distributor.StartDate" #StartDate="ngModel" type="date" name="StartDate" required>
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="End Date" [(ngModel)]="distributor.EndDate" #EndDate="ngModel" type="date" name="EndDate" required>
+                                            </mat-form-field>
+                                        </div>
+                                        <!-- <div class="col-md-12">
+                                            <label for="avatar">Upload Photo:</label>
+
+                                            <input type="file" [(ngModel)]="distributor.Photo"  (change)="fileChangeEvent($event)" #PhotoControl="ngModel" id="avatar" name="Photo" accept="image/png, image/jpeg" required>
+
+                                        </div>
+                                         <div class="col-md-6"> -->
+                                            <!-- <div class="form-group pmd-textfield pmd-textfield-floating-label example-full-width">
+                                                <label for="propeller-select">Country</label>
+                                                <select id="propeller-select" class="form-control" name="Country" [(ngModel)]=distributor.Country.Id #Id="ngModel" (change)="MainExeChange($event)">
+                                                    <option *ngFor="let Country of CountryList" [value]="Country.Id">
+                                                        {{Country.Name}} </option>
+                                                </select>
+                                            </div>
+        
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="form-group pmd-textfield pmd-textfield-floating-label example-full-width">
+                                                <label for="propeller-select">State</label>
+                                                <select id="propeller-select" class="form-control" name="State" [(ngModel)]=distributor.State.Id #Id="ngModel" (change)="MainExeChange($event)">
+                                                    <option *ngFor="let State of StateList" [value]="State.Id">
+                                                        {{State.Name}} </option>
+                                                </select>
+                                            </div>
+        
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="form-group pmd-textfield pmd-textfield-floating-label example-full-width">
+                                                <label for="propeller-select">City</label>
+                                                <select id="propeller-select" class="form-control" name="City" [(ngModel)]=distributor.City.Id #Id="ngModel" (change)="MainExeChange($event)">
+                                                    <option *ngFor="let City of Citylist" [value]="City.Id">
+                                                        {{City.Name}} </option>
+                                                </select>
+                                            </div>
+        
+                                        </div> -->
+
+                                        <!-- <div class="col-md-6">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="DOB" [(ngModel)]="instructor.DOB" #DOBControl="ngModel" type="date" name="DOB" required>
+                                            </mat-form-field>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="Salary" [(ngModel)]="instructor.Salary" #SalaryControl="ngModel" type="number" name="Salary" required>
+                                            </mat-form-field>
+                                        </div>
+
+
+                                        <div class="col-md-6">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="Email ID" [(ngModel)]="instructor.Email" #EmailControl="ngModel" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$" name="Email" type="email" required>
+                                            </mat-form-field>
+                                            <div class="help-block" *ngIf=" EmailControl.errors?.pattern && EmailControl.touched ">Email is invalid</div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="Mobile Number" [(ngModel)]="instructor.Mobile" #MobileControl="ngModel" onKeyPress="if(this.value.length==10) return false;" name="Mobile" type="number" required>
+                                            </mat-form-field>
+                                            <div class="help-block" *ngIf=" MobileControl.touched && MobileControl.errors?.pattern ">Mobile number is invalid</div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <mat-form-field class="example-full-width">
+                                                <textarea matInput placeholder="Address" [(ngModel)]="instructor.Address" #AddressControl="ngModel" name="Address" class="example-full-width" type="text" required></textarea>
+                                            </mat-form-field>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <mat-form-field class="example-full-width">
+                                                <textarea matInput placeholder="Professional Details" [(ngModel)]="instructor.ProfessionalDetails" #ProfessionalDetailsControl="ngModel" name="ProfessionalDetails" class="example-full-width" type="text" required></textarea>
+                                            </mat-form-field>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="Experience" [(ngModel)]="instructor.Experience" #ExperienceControl="ngModel" name="Experience" class="example-full-width" type="text" required>
+                                            </mat-form-field>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="Thumb Id" [(ngModel)]="instructor.ThumbId" #ThumbIdControl="ngModel" name="ThumbId" class="example-full-width" type="number" required>
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="Joining Date" [(ngModel)]="instructor.JoiningDate" #JoiningDate="ngModel" type="date" name="JoiningDate" required>
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="Date Of Resign" [(ngModel)]="instructor.DateOfResign" #DateOfResign="ngModel" type="date" name="DateOfResign" required>
+                                            </mat-form-field>
+                                        </div>
+                                       
+                                        <div class="col-md-12">
+                                            <label for="avatar">Upload Photo:</label>
+
+                                            <input type="file" [(ngModel)]="instructor.Photo"  (change)="fileChangeEvent($event)" #PhotoControl="ngModel" id="avatar" name="Photo" accept="image/png, image/jpeg" required>
+
+                                        </div> -->
+
+
+                                    </div>
+
+                                    <div class="row"style="margin:auto">
+                                        <div class="col-md-5"></div>
+
+                                        <button mat-raised-button type="submit" class="btn btn-danger"  (click)="OnSubmit()">Update</button>
+
+                                        <div class="col-md-2"></div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-2"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

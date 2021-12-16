@@ -1,0 +1,77 @@
+
+
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8"style="padding-top:15px">
+                <div class="card">
+                    <form #subCategoryForm="ngForm">
+                        <div class="card-header card-header-danger">
+                            <h4 class="card-title">Sub Category </h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+
+                                <div class="col-md-6">
+                                    <div class="form-group pmd-textfield pmd-textfield-floating-label example-full-width">
+                                        <label for="propeller-select">Main Category</label>
+                                        <select id="propeller-select" class="form-control" name="MainCategoryId" [(ngModel)]=subCategory.MainCategoryId #MainCategoryId="ngModel" (change)="MainExeChange($event)">
+                                            <option *ngFor="let MainCategory of mainCategorylist" [value]="MainCategory.Id">
+                                                {{MainCategory.Name}} </option>
+                                                <option [value]="1">1</option>
+                                        </select>
+                                    </div>
+
+                                </div>
+                                
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Sub Category Name " [(ngModel)]="subCategory.SubCategoryName" #SubCategoryNameControl="ngModel" name="SubCategoryName" class="example-full-width" type="text" required onkeypress="return (event.charCode > 64 && 
+                                    event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)">
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <textarea matInput placeholder="SubCategoryDescription" [(ngModel)]="subCategory.SubCategoryDescription" #SubCategoryDescriptionControl="ngModel" name="SubCategoryDescription" class="example-full-width" type="text" required></textarea>
+                                    </mat-form-field>
+                                </div>
+                              
+                                
+                            
+                                <div class="col-md-6">
+                                    <label for="avatar">Upload Sub Category Image1 :</label>
+
+                                    <input type="file" [(ngModel)]="subCategory.SubCategoryImage1"  (change)="fileChangeEvent($event)" #SubCategoryImage1Control="ngModel" id="avatar" name="SubCategoryImage1" accept="image/png, image/jpeg" required>
+
+                                </div> 
+                                <div class="col-md-6">
+                                    <label for="avatar">Upload Sub Category Image1 :</label>
+
+                                    <input type="file" [(ngModel)]="subCategory.SubCategoryImage2"  (change)="fileChangeEvent($event)" #SubCategoryImage2Control="ngModel" id="avatar" name="SubCategoryImage2" accept="image/png, image/jpeg" required>
+
+                                </div> 
+
+                              
+                            </div>
+                            <br>
+                            <div class="row"style="margin:auto">
+                                <div class="col-md-5"></div>
+
+                                <button mat-raised-button type="submit" class="btn btn-danger" [disabled]="subCategoryForm.invalid" (click)="OnSubmit()">Submit</button>
+                                <div class="clearfix"></div>
+
+                                <div class="col-md-2"></div>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+    </div>
+</div>
+
+
+

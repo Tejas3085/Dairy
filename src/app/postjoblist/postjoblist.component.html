@@ -1,0 +1,73 @@
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+          <!-- <div class="col-md-2"></div> -->
+          <div class="col-md-12">
+              <div class="card">
+                  <div class="card-header card-header-danger">
+                      <h4 class="card-title">All Jobs</h4>
+                      <p class="card-category"></p>
+                  </div>
+                  <div class="card-body">
+                  
+                          <div class="row">
+
+                              <div class="col-md-12">                                
+                                 
+                                  <div class="table-responsive">
+                                    <table class="table table-bordered">
+                                      <thead>
+                                        <tr class="titlecolor">
+                                            <th>Job Id</th>
+                                          <th>Job Title</th>
+                                          <th>Role</th>
+                                          <th>Job Category</th>
+                                          <th>Organization</th>
+                                          <th>Minimum Qualification</th>
+                                          <th>Max Age</th>
+                                          <th>Experience</th>
+                                          <th>Expected Salary</th>
+                                          
+                                          <th>Required Skill</th>
+                                          <th>Edit</th>
+                                          <th>Delete</th>
+                                  
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                        <tr *ngFor="let i of postjoblist">
+                                          <td style="padding-left: 17px;"> &nbsp;&nbsp;{{i.JobId}}</td>                                           <td>{{i.JobTitle}}</td>
+                                          <td>{{i.Role}}</td>
+                                          <td>{{i.JobCategory.JobCategory_Name}}</td>
+                                          <td>{{i.Organization.Name}}</td>
+                                          <td>{{i.MinQualification}}</td>
+                                          <td>{{i.MaxAge}}</td>
+                                          <td>{{i.Experiance}}</td>
+                                          <td>{{i.ExpectedSalary}}</td>
+                                          
+                                          <td>{{i.RequiredSkill}}</td>
+                                       
+
+                                         <td (click)="Edit(i.JobId)" style="cursor: pointer;"><i class="fa fa-pencil" aria-hidden="true" style="margin-right: 7px;"></i>Edit</td>
+                                          <td (click)="Delete(i.JobId)" style="cursor: pointer;"><i class="fa fa-trash" aria-hidden="true" style="margin-right: 7px;"></i>Delete</td>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+                                  </div>                   
+                                </div>  
+                              </div>  
+
+                            
+                          <div class="row">
+                              <div class="col-md-12">
+                                 
+                              </div>
+                          </div>
+
+
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>

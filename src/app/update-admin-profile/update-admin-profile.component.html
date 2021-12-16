@@ -1,0 +1,77 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">Admin Registration</h4>
+                        <p class="card-category">Update your profile</p>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input class="Attribute" matInput placeholder="Name" [(ngModel)]="adminMaster.Name" #adminNameControl="ngModel" type="text" id="FName" name="Name" required onkeypress="return (event.charCode > 64 && 
+                                        event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)">
+                                    </mat-form-field>                                   
+                                </div>
+
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Mobile Number" [(ngModel)]="adminMaster.Mobile" onKeyPress="if(this.value.length==10) return false;" name="Mobile" #mobileControl="ngModel" type="number" required>
+                                    </mat-form-field>
+                                    <div class="help-block" *ngIf=" mobileControl.touched && mobileControl.errors?.pattern ">Mobile number is invalid</div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Email ID" [(ngModel)]="adminMaster.Email" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$" name="Email" #emailControl="ngModel" type="email" required>
+                                    </mat-form-field>                                  
+                                    <div class="help-block" *ngIf=" emailControl.errors?.pattern && emailControl.touched ">Email is invalid</div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Password" [(ngModel)]="adminMaster.Password" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}" name="Password" #passwordControl="ngModel" type="password" required>
+                                    </mat-form-field>
+                                    <div class="help-block" *ngIf=" passwordControl.errors?.pattern && passwordControl.touched ">Password is invalid</div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Entry Date" [(ngModel)]="adminMaster.EntryDate" name="EntryDate" #entryDateControl="ngModel" type="date">
+                                    </mat-form-field>                                 
+                                </div>
+                                
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-5"></div>
+                                <div class="">
+                                    <button mat-raised-button type="submit"  class="btn btn-danger " (click)="OnSubmit()">Save</button>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="col-md-2"></div>
+                            </div>
+                         
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+    </div>
+</div>
+<Script>
+    $('.alphaonly').bind('keyup blur', function() {
+        var node = $(this);
+        node.val(node.val().replace(/[^a-z ]/g, ''));
+    });
+</Script>

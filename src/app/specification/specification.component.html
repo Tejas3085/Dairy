@@ -1,0 +1,154 @@
+
+
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8"style="padding-top:15px">
+                <div class="card">
+                    <form #SpecificationForm="ngForm">
+                        <div class="card-header card-header-danger">
+                            <h4 class="card-title">Product Specification </h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+
+                           
+                                
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="SpecificationTitle" [(ngModel)]="productSpecification.SpecificationTitle" #SpecificationTitleControl="ngModel" name="SpecificationTitle" class="example-full-width" type="text" required onkeypress="return (event.charCode > 64 && 
+                                    event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)">
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="ServingSize" [(ngModel)]="productSpecification.ServingSize" #ServingSizeControl="ngModel" name="ServingSize" type="number" required>
+                                    </mat-form-field>
+
+                                </div>
+                                <!--  -->
+           
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="AmountPer" [(ngModel)]="productSpecification.AmountPer" #AmountPerControl="ngModel" name="AmountPer" type="number" required>
+                                    </mat-form-field>
+
+                                </div>
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Energy" [(ngModel)]="productSpecification.Energy" #EnergyControl="ngModel" name="Energy" type="number" required>
+                                    </mat-form-field>
+
+                                </div>
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="TotalFat" [(ngModel)]="productSpecification.TotalFat" #TotalFatControl="ngModel" name="TotalFat" type="number" required>
+                                    </mat-form-field>
+
+                                </div>
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="SaturatedFat" [(ngModel)]="productSpecification.SaturatedFat" #SaturatedFatControl="ngModel" name="SaturatedFat" type="number" required>
+                                    </mat-form-field>
+
+                                </div>
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Carbohydrate" [(ngModel)]="productSpecification.Carbohydrate" #CarbohydrateControl="ngModel" name="Carbohydrate" type="number" required>
+                                    </mat-form-field>
+
+                                </div>
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Protein" [(ngModel)]="productSpecification.Protein" #ProteinControl="ngModel" name="Protein" type="number" required>
+                                    </mat-form-field>
+
+                                </div>
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Calcium" [(ngModel)]="productSpecification.Calcium" #CalciumControl="ngModel" name="Calcium" type="number" required>
+                                    </mat-form-field>
+
+                                </div>
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Sodium" [(ngModel)]="productSpecification.Sodium" #SodiumControl="ngModel" name="Sodium" type="number" required>
+                                    </mat-form-field>
+
+                                </div>
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Sugar" [(ngModel)]="productSpecification.Sugar" #SugarControl="ngModel" name="Sugar" type="number" required>
+                                    </mat-form-field>
+
+                                </div>
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="AddedSugar" [(ngModel)]="productSpecification.AddedSugar" #AddedSugarControl="ngModel" name="AddedSugar" type="number" required>
+                                    </mat-form-field>
+
+                                </div>
+
+                                    <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Packing" [(ngModel)]="productSpecification.Packing" #PackingControl="ngModel" name="Packing" type="text" required>
+                                    </mat-form-field>
+
+                                </div>
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="PackagingDate" [(ngModel)]="productSpecification.PackagingDate" #PackagingDateControl="ngModel" type="date" name="PackagingDate" required>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="BestBeforeDays" [(ngModel)]="productSpecification.BestBeforeDays" #BestBeforeDaysControl="ngModel" name="BestBeforeDays" type="number" required>
+                                    </mat-form-field>
+
+                                </div>
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <textarea matInput placeholder="OtherNutritions" [(ngModel)]="productSpecification.OtherNutritions" #OtherNutritionsControl="ngModel" name="OtherNutritions" class="example-full-width" type="text" required></textarea>
+                                    </mat-form-field>
+                                </div>
+
+                                       <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="StorageTemp" [(ngModel)]="productSpecification.StorageTemp" #StorageTempControl="ngModel" name="StorageTemp" type="number" required>
+                                    </mat-form-field>
+
+                                </div>
+
+                                <!--  -->
+
+                               
+                             
+
+                                
+            
+
+                            
+                               
+
+                              
+                            </div>
+                            <div class="row"style="margin:auto">
+                                <div class="col-md-5"></div>
+
+                                <button mat-raised-button type="submit" class="btn btn-danger" [disabled]="SpecificationForm.invalid" (click)="OnSubmit()">Submit</button>
+                                <div class="clearfix"></div>
+
+                                <div class="col-md-2"></div>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+    </div>
+</div>
+
+

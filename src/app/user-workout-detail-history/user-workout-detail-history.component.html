@@ -1,0 +1,93 @@
+<p>user-workout-detail-history works!</p>
+
+<div class="main-content">
+    <div class="container-fluid">
+
+        <div class="row">
+         
+            <div class="col-md-12"style="padding-top:23px">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">User Workout Report</h4>
+                        <p class="card-category"></p>
+                    </div>
+                    <div class="card-body">
+                        <form #orgTypeForm="ngForm">
+                            <div class="row ">
+                               
+                                <div class="col-md-4 ">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="From Date" [(ngModel)]="StartDate1" #StartDate="ngModel" type="date" name="StartDate" required>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-4">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="To Date" [(ngModel)]="EndDate1" #EndDate="ngModel" type="date" name="EndDate" required>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-4">
+                                    <button type="submit" class="serchlist" class="btn btn-success"(click)="Select()">Search</button>
+                                <!-- </div>
+                                <div class="col-md-2"> -->
+                                    <button type="submit" class="fw-btn-fill btn-gradient-yellow btn btn-success" (click)="Reset()">RESET</button>
+                                </div>
+                    </div>
+
+                            <div class="row">
+
+                                <!-- <div class="col-md-12">
+                                    <br> -->
+                                    <div class="table-responsive">
+                                        <div class="col-lg-12 table-responsive" #TABLE #table>
+                                        <div style="padding-bottom: 10px;">
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <button (click)="ExportTOExcel()" class="btn btn-success">Export</button> 
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <table class="table table-bordered">
+                                            <thead class="thh">
+                                                <tr class="titlecolor">
+                                                    <th>Id</th>
+                                                    <th>Member</th>
+                                                    <th>Workout</th>
+                                                    <th>Instructor</th>
+                                                    <th>Start Date</th>
+                                                    <th>End Date</th>
+                                                    <th>Created Date</th>
+
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr *ngFor="let i of userWorkoutDetailList">
+                                                    <td>{{i.Id}}</td>
+                                                    <td>{{i.Member.UserName}}</td>
+                                                    <td>{{i.WorkoutType.Name}}</td>
+                                                    <td>{{i.Instructor.FirstName}}</td>
+                                                    <td>{{i.StartDate}}</td>
+                                                    <td>{{i.EndDate}}</td>
+                                                    <td>{{i.CreatedDate}}</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    </div>
+                                <!-- </div> -->
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col-md-12">
+
+                                </div>
+                            </div>
+
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

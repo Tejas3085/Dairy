@@ -1,0 +1,64 @@
+
+
+
+
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8"style="padding-top:35px">
+                <div class="card">
+                    <form #subExerciseForm="ngForm">
+                        <div class="card-header card-header-danger">
+                            <h4 class="card-title">Sub Exercise</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group pmd-textfield pmd-textfield-floating-label example-full-width">
+                                        <label for="propeller-select">Exercise</label>
+                                        <select id="propeller-select" class="form-control" name="Id" [(ngModel)]=subExercise.MainExercise.Id #Id="ngModel" (change)="MainExeChange($event)">
+                                            <option *ngFor="let MainExercise of MainExerciselist" [value]="MainExercise.Id">
+                                                {{MainExercise.Name}} </option>
+                                        </select>
+                                    </div>
+
+                                </div>
+                    
+                                <div class="col-md-4">
+                                     <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Sub Exercise Name" [(ngModel)]="subExercise.Name" #Name="ngModel" name="Name" class="example-full-width" type="text" required onkeypress="return (event.charCode > 64 && 
+                                        event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)">
+                                    </mat-form-field> 
+                                </div>
+                             
+                    
+                                <div class="col-md-4">
+                                     <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Description" [(ngModel)]="subExercise.Description" #Description="ngModel" name="Description" class="example-full-width" type="text" required>
+                                    </mat-form-field> 
+                                </div>
+
+
+                            </div>
+                            <div class="row"style="margin:auto">
+                                <div class="col-md-5"></div>
+
+                                <!-- <button mat-raised-button style="height: 35px; font-size: 10px;  padding: 5px;" type="button" class="btn btn-danger" (click)="OnAdd()">Add</button> -->
+                               
+                                <button mat-raised-button type="submit" [disabled]="subExerciseForm.invalid" class="btn btn-danger" (click)="OnSubmit()">Submit</button>
+                                <div class="clearfix"></div>
+
+                                <div class="col-md-2"></div>
+                            </div>
+
+                        </div>
+                    </form>
+
+                    <!-- BMI Cal -->
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+    </div>
+</div>

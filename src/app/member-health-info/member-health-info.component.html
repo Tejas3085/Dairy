@@ -1,0 +1,406 @@
+<!-- 
+
+
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+         
+            <div class="col-md-12">
+                <div class="card">
+                    <form #MemberHealthform="ngForm">
+                        <div class="card-header card-header-danger">
+                            <h4 class="card-title">Member Health Info</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+
+
+                                <div class="col-md-12">
+                                    <div class="form-group pmd-textfield pmd-textfield-floating-label example-full-width">
+                                        <label for="propeller-select">Member</label>
+                                        <select id="propeller-select" class="form-control" name="Id" [(ngModel)]=memberHealthInfo.Member.Id #Id="ngModel" (change)="UserChange($event)">
+                                            <option *ngFor="let Member of UserNames" [value]="Member.Id">
+                                                {{Member.UserName}} </option>
+                                        </select>
+                                    </div>
+
+                                </div>
+
+
+
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder=" Date" [(ngModel)]="memberHealthInfo.Date" name="Date" #Date="ngModel" type="date" name="Date" required>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Height (In CM)" [(ngModel)]="memberHealthInfo.Height" name="Height" #Height="ngModel" name="Height" type="number" required>
+                                    </mat-form-field>
+                                
+                                </div>
+
+
+
+
+
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="weight (In KG)" [(ngModel)]="memberHealthInfo.Weight" name="Weight" #Weight="ngModel" name="Weight" type="number" required>
+                                    </mat-form-field>
+
+                                </div>
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Average Weight (In KG)" [(ngModel)]="memberHealthInfo.AverageWeight" #AverageWeight="ngModel" name="AverageWeight" type="number" required>
+                                    </mat-form-field>
+
+                                </div>
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Total Fat %" [(ngModel)]="memberHealthInfo.TotalFat" name="TotalFat" #TotalFat="ngModel" type="number" required>
+                                    </mat-form-field>
+
+                                </div>
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Average Fat %" [(ngModel)]="memberHealthInfo.AverageFat" name="AverageFat" #AverageFat="ngModel" type="number" required>
+                                    </mat-form-field>
+
+                                </div>
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Age" [(ngModel)]="memberHealthInfo.Age" name="Age" #Age="ngModel" type="number" required>
+                                    </mat-form-field>
+
+                                </div>
+
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Status" [(ngModel)]="memberHealthInfo.Status" name="Status" #Status="ngModel" name="Status" class="example-full-width" type="text" required onkeypress="return (event.charCode > 64 && 
+                                    event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)">
+                                    </mat-form-field>
+                                </div>
+
+
+
+                                <div class="col-md-12">
+                                    <mat-form-field class="example-full-width">
+                                        <textarea matInput placeholder="Comment" [(ngModel)]="memberHealthInfo.Comment" name="Comment" #Comment="ngModel" name="Comment" class="example-full-width" type="text" required onkeypress="return (event.charCode > 64 && 
+                                    event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)"></textarea>
+                                    </mat-form-field>
+                                </div>
+
+                            </div>
+                   
+                            <div id="MainForm">
+                                <div class="list-group panel">
+                                    <a href="#form3" class="list-group-item list-group-item-success strong" data-toggle="collapse" data-parent="#MainForm"> Body Composition Analysis (BCA) <i i id="one" class="fa fa-angle-left plus" aria-hidden="true"> </i> <i id="two" class="fa fa-angle-down plus" aria-hidden="true"></i></a>
+           
+                                    <div class="row col-md-12">
+
+                                        <div class="row">
+
+                                            <div class="col-md-12">
+
+                                                <div class="table-responsive">
+                                                    <table class="table table-bordered">
+                                                        <thead>
+                                                            <tr class="titlecolor">
+                                                                <th> <img src="/assets/calendar.png" class="clock"></th>
+                                                            
+                                                                <th>  <img src="/assets/clock.png" class="tanita"><span style="font-size: 13px; margin-left: 27px;">Time</span></th>
+                                                                <th> <img src="/assets/6icons.png" class="tanita"><span style="font-size: 13px; margin-left: 5px;">BodyFat %</span></th>
+                                                                <th> <img src="/assets/BodyWater.png" class="tanita"><span style="font-size: 13px; margin-left: 10px;">BodyWater</span></th>
+                                                                <th> <img src="/assets/5icons.png" class="tanita"><span style="font-size: 13px; margin-left: 1px;">Visceral Fat</span></th>
+                                                                <th><img src="/assets/2icons.png" class="tanita"><span style="font-size: 13px; margin-left: 10px;">MusscleMass</span></th>
+                                                                <th><img src="/assets/Phisique.png" class="tanita"><span style="font-size: 13px; margin-left: 10px;">Physique</span></th>
+                                                                <th><img src="/assets/3icons.png" class="tanita"><span style="font-size: 13px; margin-left: 10px;">BoneMass</span></th>
+                                                                <th><img src="/assets/7icons.png" class="tanita"><span style="font-size: 13px; margin-left: 30px;">BMR</span></th>
+                                                                <th><img src="/assets/1icons.png" class="tanita"><span style="font-size: 13px; margin-left: 1px;">Metabolic Age</span></th>
+
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td><input type="date" class="form-control" [(ngModel)]="memberHealthInfo.Date" name="Date" #Date="ngModel" type="date" required></td>
+                                                                <td><input type="time" class="form-control" [(ngModel)]="memberHealthInfo.Time" name="Time" #Time="ngModel" type="time" required></td>
+                                                                <td><input type="text" class="form-control" [(ngModel)]="memberHealthInfo.BodyFat" name="BodyFat" #BodyFat="ngModel" type="text" required></td>
+
+                                                                <td><input type="text" class="form-control" [(ngModel)]="memberHealthInfo.BodyWater" name="BodyWater" #BodyWater="ngModel" type="text" required></td>
+                                                                <td><input type="text" class="form-control" [(ngModel)]="memberHealthInfo.VisceralFat" name="VisceralFat" #VisceralFat="ngModel" type="text" required></td>
+                                                                <td><input type="text" class="form-control" [(ngModel)]="memberHealthInfo.MusscleMass" name="MusscleMass" #MusscleMass="ngModel" type="text" required></td>
+                                                                <td><input type="text" class="form-control" [(ngModel)]="memberHealthInfo.Physique" name="Physique" #Physique="ngModel" type="text" required></td>
+                                                                <td><input type="text" class="form-control" [(ngModel)]="memberHealthInfo.BoneMass" name="BoneMass" #BoneMass="ngModel" type="text" required></td>
+                                                                <td><input type="text" class="form-control" [(ngModel)]="memberHealthInfo.DailyCalorie" name="DailyCalorie" #DailyCalorie="ngModel" type="text" required></td>
+                                                                <td><input type="text" class="form-control" [(ngModel)]="memberHealthInfo.MetabolicAge" name="MetabolicAge" #MetabolicAge="ngModel" type="text" required></td>
+
+                                                            </tr>
+                                                        </tbody>
+
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                           
+                                </div>
+                            </div>
+   
+                            <div class="row">
+                                <div class="col-md-5"></div>
+
+                                <button mat-raised-button type="submit" class="btn btn-danger" [disabled]="MemberHealthform.invalid" (click)="OnSubmit()">Submit</button>
+                                <div class="clearfix"></div>
+
+                                <div class="col-md-2"></div>
+                            </div>
+                       
+                            <div class="card-header card-header-danger" style=" margin-top: 13px; margin-right: 800px;background-color: #5aa204;">
+                                <h4 class="card-title" style="color: #ffe000;"   >Body Water%</h4>
+                                <p>Male: 45% - 60%</p>
+                                <p>Female: 50% - 65% </p>
+                            </div>
+                        <div class="row">
+                            <div class="col-md-7">
+                             <div class="card" style="width: 36rem;">
+                                <img src="/assets/bodyfat.jpg" class="card-img-top" >
+                                <div class="card-body">
+                                  <h5 class="card-title" style="text-align: center; color: blue;  font-weight: 800;">Body Fat</h5>
+                                </div>
+                              </div>
+                            </div>
+
+
+                            <div class="col-md-5">
+                                <div class="card" style="width: 26rem; height: 343px;">
+                                   <img src="/assets/visceralfat.jpg" class="card-img-top" >
+                                   <div class="card-body">
+                                     <h5 class="card-title"style="text-align: center; color: blue;    margin-top: 76px; font-weight: 800; ">visceral Fat</h5>
+                                   </div>
+                                 </div>
+                               </div>
+                             
+                             
+
+                              
+
+                            
+                        </div> 
+                           
+                        </div>
+                    </form>
+                </div>
+            </div>
+     
+        </div>
+    </div>
+</div> -->
+
+
+
+<!--New Code-->
+
+<p>member-health-info works!</p>
+
+
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <!-- <div class="col-md-2"></div> -->
+            <div class="col-md-12"style="padding-top:13px">
+                <div class="card">
+                    <form #MemberHealthform="ngForm">
+                        <div class="card-header card-header-danger">
+                            <h4 class="card-title">Member Health Info</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+
+
+                                <div class="col-md-12">
+                                    <div class="form-group pmd-textfield pmd-textfield-floating-label example-full-width">
+                                        <label for="propeller-select">Member</label>
+                                        <select id="propeller-select" class="form-control" name="Id" [(ngModel)]=memberHealthInfo.Member.Id #Id="ngModel" (change)="UserChange($event)">
+                                            <option *ngFor="let Member of UserNames" [value]="Member.Id">
+                                                {{Member.UserName}} </option>
+                                        </select>
+                                    </div>
+
+                                </div>
+
+
+
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder=" Date" [(ngModel)]="memberHealthInfo.Date" name="Date" #Date="ngModel" type="date" name="Date" required>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Height (In CM)" [(ngModel)]="memberHealthInfo.Height" name="Height" #Height="ngModel" name="Height" type="number" required>
+                                    </mat-form-field>
+
+                                </div>
+
+
+
+
+
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="weight (In KG)" [(ngModel)]="memberHealthInfo.Weight" name="Weight" #Weight="ngModel" name="Weight" type="number" required>
+                                    </mat-form-field>
+
+                                </div>
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Average Weight (In KG)" [(ngModel)]="memberHealthInfo.AverageWeight" #AverageWeight="ngModel" name="AverageWeight" type="number" required>
+                                    </mat-form-field>
+
+                                </div>
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Total Fat %" [(ngModel)]="memberHealthInfo.TotalFat" name="TotalFat" #TotalFat="ngModel" type="number" required>
+                                    </mat-form-field>
+
+                                </div>
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Average Fat %" [(ngModel)]="memberHealthInfo.AverageFat" name="AverageFat" #AverageFat="ngModel" type="number" required>
+                                    </mat-form-field>
+
+                                </div>
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Age" [(ngModel)]="memberHealthInfo.Age" name="Age" #Age="ngModel" type="number" required>
+                                    </mat-form-field>
+
+                                </div>
+
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Status" [(ngModel)]="memberHealthInfo.Status" name="Status" #Status="ngModel" name="Status" class="example-full-width" type="text" required onkeypress="return (event.charCode > 64 && 
+                                    event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)">
+                                    </mat-form-field>
+                                </div>
+
+
+
+                                <div class="col-md-12">
+                                    <mat-form-field class="example-full-width">
+                                        <textarea matInput placeholder="Comment" [(ngModel)]="memberHealthInfo.Comment" name="Comment" #Comment="ngModel" name="Comment" class="example-full-width" type="text" required onkeypress="return (event.charCode > 64 && 
+                                    event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)"></textarea>
+                                    </mat-form-field>
+                                </div>
+
+                            </div>
+                            <!--Accordian-->
+                            <div id="MainForm">
+                                <div class="list-group panel">
+                                    <a href="#form3" class="list-group-item list-group-item-success strong" data-toggle="collapse" data-parent="#MainForm"> Body Composition Analysis (BCA) <i i id="one" class="fa fa-angle-left plus" aria-hidden="true"> </i> <i id="two" class="fa fa-angle-down plus" aria-hidden="true"></i></a>
+                                    <!-- <div class="collapse submenufont" id="form3"> -->
+
+
+                                    <div class="row">
+
+                                        <div class="col-md-12">
+
+                                            <div class="table-responsive">
+                                                <table class="table table-bordered">
+                                                    <thead>
+                                                        <tr class="titlecolor">
+                                                            <th> <img src="/assets/calendar.png" class="clock"></th>
+
+                                                            <th> <img src="/assets/clock.png" class="tanita"><span style="font-size: 13px; margin-left: 27px;">Time</span></th>
+                                                            <th> <img src="/assets/6icons.png" class="tanita"><span style="font-size: 13px; margin-left: 5px;">BodyFat %</span></th>
+                                                            <th> <img src="/assets/BodyWater.png" class="tanita"><span style="font-size: 13px; margin-left: 10px;">BodyWater</span></th>
+                                                            <th> <img src="/assets/5icons.png" class="tanita"><span style="font-size: 13px; margin-left: 1px;">Visceral Fat</span></th>
+                                                            <th><img src="/assets/2icons.png" class="tanita"><span style="font-size: 13px; margin-left: 10px;">MusscleMass</span></th>
+                                                            <th><img src="/assets/Phisique.png" class="tanita"><span style="font-size: 13px; margin-left: 10px;">Physique</span></th>
+                                                            <th><img src="/assets/3icons.png" class="tanita"><span style="font-size: 13px; margin-left: 10px;">BoneMass</span></th>
+                                                            <th><img src="/assets/7icons.png" class="tanita"><span style="font-size: 13px; margin-left: 30px;">BMR</span></th>
+                                                            <th><img src="/assets/1icons.png" class="tanita"><span style="font-size: 13px; margin-left: 1px;">Metabolic Age</span></th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td><input type="date" class="form-control" [(ngModel)]="memberHealthInfo.Date" name="Date" #Date="ngModel" type="date" required></td>
+                                                            <td><input type="time" class="form-control" [(ngModel)]="memberHealthInfo.Time" name="Time" #Time="ngModel" type="time" required></td>
+                                                            <td><input type="text" class="form-control" [(ngModel)]="memberHealthInfo.BodyFat" name="BodyFat" #BodyFat="ngModel" type="text" required></td>
+
+                                                            <td><input type="text" class="form-control" [(ngModel)]="memberHealthInfo.BodyWater" name="BodyWater" #BodyWater="ngModel" type="text" required></td>
+                                                            <td><input type="text" class="form-control" [(ngModel)]="memberHealthInfo.VisceralFat" name="VisceralFat" #VisceralFat="ngModel" type="text" required></td>
+                                                            <td><input type="text" class="form-control" [(ngModel)]="memberHealthInfo.MusscleMass" name="MusscleMass" #MusscleMass="ngModel" type="text" required></td>
+                                                            <td><input type="text" class="form-control" [(ngModel)]="memberHealthInfo.Physique" name="Physique" #Physique="ngModel" type="text" required></td>
+                                                            <td><input type="text" class="form-control" [(ngModel)]="memberHealthInfo.BoneMass" name="BoneMass" #BoneMass="ngModel" type="text" required></td>
+                                                            <td><input type="text" class="form-control" [(ngModel)]="memberHealthInfo.DailyCalorie" name="DailyCalorie" #DailyCalorie="ngModel" type="text" required></td>
+                                                            <td><input type="text" class="form-control" [(ngModel)]="memberHealthInfo.MetabolicAge" name="MetabolicAge" #MetabolicAge="ngModel" type="text" required></td>
+                                                        </tr>
+                                                    </tbody>
+
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <!-- </div> -->
+                                </div>
+                            </div>
+                            <!--Accordian End-->
+                            <div class="row"style="margin:auto">
+                                <div class="col-md-5"></div>
+
+                                <button mat-raised-button type="submit" class="btn btn-danger" [disabled]="MemberHealthform.invalid" (click)="OnSubmit()">Submit</button>
+                                <div class="clearfix"></div>
+
+                                <div class="col-md-2"></div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <!--Standard Images-->
+                                    <div class="card-header card-header-danger" style=" margin-top: 13px;background-color: #5aa204;">
+                                        <h4 class="card-title" style="color: #ffe000;">Body Water%</h4>
+                                        <p>Male: 45% - 60%</p>
+                                        <p>Female: 50% - 65% </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="card">
+                                        <img src="/assets/bodyfat.jpg" class="card-img-top">
+                                        <div class="card-body">
+                                            <h5 class="card-title" style="text-align: center; color: blue;  font-weight: 800;">Body Fat</h5>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="col-md-6">
+                                    <div class="card">
+                                       
+                                        <img src="/assets/visceralfat.jpg" class="card-img-top">
+                                        <div class="card-body">
+                                            <!-- margin-top: 76px; -->
+                                            <h5 class="card-title" style="text-align: center; color: blue;     font-weight: 800; ">visceral Fat</h5>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+                            <!--Standard Images-->
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- <div class="col-md-2"></div> -->
+        </div>
+    </div>
+</div>

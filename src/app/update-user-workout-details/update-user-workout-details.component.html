@@ -1,0 +1,97 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-2"></div>
+
+                    <div class="col-md-8" style="padding-top:37px">
+                        <div class="card">
+                            <div class="card-header card-header-danger">
+                                <h4 class="card-title">Update User Workout Details</h4>
+                                <!-- <p class="card-category">Complete your profile</p> -->
+                            </div>
+                            <div class="card-body">
+                                <form #UserWorkoutDetailsForm="ngForm">
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group pmd-textfield pmd-textfield-floating-label example-full-width">
+                                                <label for="propeller-select">User</label>
+                                                <select id="propeller-select" class="form-control" name="Id" [(ngModel)]=userWorkoutDetails.Member.Id #Id="ngModel" (change)="UserChange($event)">
+                                                    <option *ngFor="let Member of UserNames" [value]="Member.Id">
+                                                        {{Member.UserName}} </option>
+                                                </select>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="form-group pmd-textfield pmd-textfield-floating-label example-full-width">
+                                                <label for="propeller-select">Workout</label>
+                                                <select id="propeller-select" class="form-control" name="Id" [(ngModel)]=userWorkoutDetails.WorkoutType.Id #Id="ngModel" (change)="WorkoutChange($event)">
+                                                    <option *ngFor="let WorkoutType of WorkoutTypes" [value]="WorkoutType.Id">
+                                                        {{WorkoutType.Name}} </option>
+                                                </select>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="form-group pmd-textfield pmd-textfield-floating-label example-full-width">
+                                                <label for="propeller-select">Instructor</label>
+                                                <select id="propeller-select" class="form-control" name="Id" [(ngModel)]=userWorkoutDetails.Instructor.Id #Id="ngModel" (change)="InstructorChange($event)">
+                                                    <option *ngFor="let Instructor of Instructors" [value]="Instructor.Id">
+                                                        {{Instructor.FirstName}} </option>
+                                                </select>
+                                            </div>
+
+                                        </div>
+
+
+
+                                        <div class="col-md-12">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="Status" [(ngModel)]="userWorkoutDetails.Status" name="Status" #Status="ngModel" name="Status" class="example-full-width" type="text" required onkeypress="return (event.charCode > 64 && 
+                                            event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)">
+                                            </mat-form-field>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="Start Date" [(ngModel)]="userWorkoutDetails.StartDate" #StartDate="ngModel" type="date" name="StartDate" required>
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="End Date" [(ngModel)]="userWorkoutDetails.EndDate" #EndDate="ngModel" type="date" name="EndDate" required>
+                                            </mat-form-field>
+                                        </div>
+
+
+
+
+
+                                    </div>
+
+
+
+                                    <div class="row" style="margin:auto">
+                                        <div class="col-md-5"></div>
+
+                                        <!-- <button mat-raised-button type="submit" class="btn btn-danger" (click)="OnSubmit()">Save</button> -->
+                                        <button mat-raised-button type="submit" [disabled]="UserWorkoutDetailsForm.invalid" class="btn btn-danger" (click)="OnSubmit()">Save</button>
+
+                                        <div class="col-md-2"></div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-2"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

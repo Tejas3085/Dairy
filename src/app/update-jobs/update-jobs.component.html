@@ -1,0 +1,232 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-2"></div>
+
+                    <div class="col-md-8">
+                        <div class="card">
+                            <div class="card-header card-header-danger">
+                                <h4 class="card-title">Update Post Job</h4>
+                                <!-- <p class="card-category">Complete your profile</p> -->
+                            </div>
+                            <div class="card-body">
+                                <form #postJobForm="ngForm">
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="Job Category" [(ngModel)]="postJob.JobCategory" #jobCategoryControl="ngModel"  name="JobCategory" type="text" required onkeypress="return (event.charCode > 64 && 
+                                                event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)">
+                                            </mat-form-field>
+                                            <div class="help-block" *ngIf=" jobCategoryControl.touched && jobCategoryControl.errors?.pattern">Job Category is invalid</div>
+                                        </div>
+
+
+                                        <div class="col-md-6">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="Role" [(ngModel)]="postJob.Role" #roleControl="ngModel" pattern="[a-zA-Z]*" name="Role" required type="text" onkeypress="return (event.charCode > 64 && 
+                                                event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)">
+                                            </mat-form-field>
+                                            <div class="help-block" *ngIf=" roleControl.touched && roleControl.errors?.pattern">Role is invalid</div>
+                                        </div>
+
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="Required Skills" [(ngModel)]="postJob.RequiredSkill" #requiredSkillsControl="ngModel" pattern="[a-zA-Z]*" name="RequiredSkill" required class="example-full-width" type="text" onkeypress="return (event.charCode > 64 && 
+                                                event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)">
+                                            </mat-form-field>
+                                            <div class="help-block" *ngIf=" requiredSkillsControl.touched && requiredSkillsControl.errors?.pattern">Required Skills is invalid</div>
+                                        </div>
+
+
+
+                                        <div class="col-md-6">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="ExtraSkill" [(ngModel)]="postJob.ExtraSkill" #extraSkillControl="ngModel" pattern="[a-zA-Z]*" name="ExtraSkill" required type="text" onkeypress="return (event.charCode > 64 && 
+                                                event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)">
+                                            </mat-form-field>
+                                            <div class="help-block" *ngIf=" extraSkillControl.touched && extraSkillControl.errors?.pattern">ExtraSkill is invalid</div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+
+
+
+                                        <div class="col-md-6">
+                                            <div class="form-group pmd-textfield pmd-textfield-floating-label example-full-width">
+                                                <label for="propeller-select">Country</label>
+                                                <select id="propeller-select" class="form-control" name="Id" [(ngModel)]=postJob.Country.Id #Id="ngModel" (change)="CountryChange($event)">
+                                                        <option *ngFor="let Country of countries"  [value]="Country.Id"> {{Country.CountryName}} </option>                                                              
+                                              </select>
+                                            </div>
+                                        </div>
+
+                                        <!-- <div class="col-md-6">
+                                                <mat-form-field appearance="fill" style="width: 138px !important">
+                                                    <mat-label>Country</mat-label>
+                                                    <mat-select id="propeller-select" class="form-control" name="Id" [(ngModel)]=postJob.Country.Id #Id="ngModel" (change)="CountryChange($event)">
+                                                        <mat-option *ngFor="let Country of countries" [value]="Country.Id">
+                                                            {{Country.CountryName}}
+                                                        </mat-option>
+                                                    </mat-select>
+                                                </mat-form-field>
+                                            </div> -->
+                                        <div class="col-md-6">
+                                            <div class="form-group pmd-textfield pmd-textfield-floating-label example-full-width">
+                                                <label for="propeller-select">State</label>
+                                                <select id="propeller-select" class="form-control" name="Id" [(ngModel)]=postJob.State.Id #Id="ngModel" (change)="StateChange($event)">
+                                                        <option *ngFor="let State of states" [value]="State.Id"> {{State.StateName}} </option>                                                              
+                                              </select>
+                                            </div>
+                                        </div>
+
+
+
+
+
+                                    </div>
+                                    <div class="row">
+
+
+
+                                        <div class="col-md-6">
+                                            <div class="form-group pmd-textfield pmd-textfield-floating-label example-full-width">
+                                                <label for="propeller-select">City</label>
+                                                <select id="propeller-select" class="form-control" name="City_Id" [(ngModel)]=postJob.City.City_Id #City_Id="ngModel" (change)="CityChange($event)">
+                                                    <option *ngFor="let City of cities" [value]="City.City_Id"> {{City.CityName}} </option>                                                              
+                                          </select>
+                                            </div>
+                                        </div>
+
+
+                                        <!-- <div class="col-md-6">
+                                            <div class="form-group pmd-textfield pmd-textfield-floating-label example-full-width">
+                                                <label for="propeller-select">Min Qualification</label>
+                                                <select id="propeller-select" class="form-control" name="City_Id" [(ngModel)]=postJob.City.City_Id #City_Id="ngModel" (change)="CityChange($event)">
+                                                    <option *ngFor="let City of cities" [value]="City.City_Id"> {{City.CityName}} </option>                                                              
+                                          </select>
+                                            </div>
+                                        </div> -->
+
+                                        <div class="col-md-6">
+                                            <mat-form-field class="example-full-width">
+                                                <label for="propeller-select">Min Qualification</label>
+                                                <input matInput [(ngModel)]="postJob.MinQualification" #MinQualification="ngModel" pattern="[a-zA-Z]*" name="MinQualification" type="text" onkeypress="return (event.charCode > 64 && 
+                                                event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)">
+                                            </mat-form-field>
+                                            <div class="help-block" *ngIf=" MinQualification.touched && MinQualification.errors?.pattern">MinQualification is invalid</div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+
+
+                                        <div class="col-md-6">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="Last Apply Date" [(ngModel)]="postJob.LastApplyDate" name="LastApplyDate" type="date">
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="Max Age" [(ngModel)]="postJob.MaxAge" #maxAgeControl="ngModel"  name="MaxAge" required type="number">
+                                            </mat-form-field>
+                                            <div class="help-block" *ngIf=" maxAgeControl.touched && maxAgeControl.errors?.pattern">Max Age is invalid</div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="ExpectedSalary" [(ngModel)]="postJob.ExpectedSalary" #expectedSalaryControl="ngModel"  name="ExpectedSalary" required type="number">
+                                            </mat-form-field>
+                                            <div class="help-block" *ngIf=" expectedSalaryControl.touched && expectedSalaryControl.errors?.pattern">ExpectedSalary is invalid</div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="WorkingHours" [(ngModel)]="postJob.WorkingHours" name="WorkingHours" required type="number">
+                                            </mat-form-field>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+
+                                        <div class="col-md-12">
+                                            <mat-form-field class="example-full-width">
+                                                <textarea matInput placeholder="Job Description" [(ngModel)]="postJob.JobDescription" #jobDescriptionControl="ngModel"  name="JobDescription" required type="text" onkeypress="return (event.charCode > 64 && 
+                                                event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)"></textarea>
+                                            </mat-form-field>
+                                            <div class="help-block" *ngIf=" jobDescriptionControl.touched && jobDescriptionControl.errors?.pattern">Job Description is invalid</div>
+                                        </div>
+
+
+
+                                    </div>
+
+
+
+
+
+                                    <div class="row">
+
+                                        <!-- <div class="col-md-6">
+
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="Status" [(ngModel)]="postJob.Status" #statusControl="ngModel" pattern="[a-zA-Z]*" name="Status" required type="text" onkeypress="return (event.charCode > 64 && 
+                                                event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)">
+                                            </mat-form-field>
+                                            <div class="help-block" *ngIf=" statusControl.touched && statusControl.errors?.pattern">Status is invalid</div>
+                                        </div> -->
+
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-5"></div>
+                                       
+                                            <button mat-raised-button type="submit" [disabled]="postJobForm.invalid" class="btn btn-danger" (click)="OnSubmit()">Save</button>
+                                     
+                                        <div class="col-md-2"></div>
+                                    </div>
+                                </form>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <!--Update Delete-->
+                    <br>
+                    <!-- <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Jobcategory</th>
+                                    <th>RequiredSkill</th>
+                                    <th>Role</th>
+                                    <th>ExtraSikll</th>
+                                    <th>MaxAge</th>
+                                    <th>ExpectedSalary</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let i of educationDetailList">
+                                    <td>{{i.CollegeName}}</td>
+                                    <td>{{i.Education}}</td>
+                                    <td>{{i.Marks}}</td>
+                                    <td><a><i class="fa fa-edit" (click)="Edit(i.Id)"></i></a></td>
+                                    <td><a><i class="fa fa-trash" (click)="Delete(i.Id)"></i></a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div> -->
+
+
+                    <div class="col-md-2"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

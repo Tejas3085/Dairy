@@ -1,0 +1,428 @@
+
+
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-2"></div>
+
+                    <div class="col-md-8"style="padding-top:13px">
+                        <div class="card">
+                            <div class="card-header card-header-danger">
+                                <h4 class="card-title">Product</h4>
+                                <!-- <p class="card-category">Complete your profile</p> -->
+                            </div>
+                            <div class="card-body">
+                                <form #productsForm="ngForm">
+
+                                    <div class="row">
+
+                                        <div class="col-md-6">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="Product Name" [(ngModel)]="products.ProductName" #ProductNameControl="ngModel" name="ProductName" class="example-full-width" type="text" required onkeypress="return (event.charCode > 64 && 
+                                            event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)">
+                                            </mat-form-field>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <mat-form-field class="example-full-width">
+                                                <textarea matInput placeholder="Product Description" [(ngModel)]="products.ProductDescription" #AddressControl="ngModel" name="ProductDescription" class="example-full-width" type="text" required></textarea>
+                                            </mat-form-field>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="Product Caption" [(ngModel)]="products.ProductCaption" #ProductCaptionControl="ngModel" name="ProductCaption" class="example-full-width" type="text" required onkeypress="return (event.charCode > 64 && 
+                                            event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)">
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="Product Company" [(ngModel)]="products.ProductCompany" #ProductCompanyControl="ngModel" name="ProductCompany" class="example-full-width" type="text" required onkeypress="return (event.charCode > 64 && 
+                                            event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)">
+                                            </mat-form-field>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="Product Quantity per Unit" [(ngModel)]="products.ProdQuantityPerUnit" #ProdQuantityPerUnitControl="ngModel" onKeyPress="if(this.value.length==10) return false;" name="ProdQuantityPerUnit" type="number" required>
+                                            </mat-form-field>
+                                            <div class="help-block" *ngIf=" ProdQuantityPerUnitControl.touched && ProdQuantityPerUnitControl.errors?.pattern ">ProductQuantityPerUnit is invalid</div>
+                                        </div>
+                                        
+                                        <div class="col-md-4">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="Product Price per Unit" [(ngModel)]="products.ProductPricePerUnit" #ProductPricePerUnitControl="ngModel" onKeyPress="if(this.value.length==10) return false;" name="ProductPricePerUnit" type="number" required>
+                                            </mat-form-field>
+                                            <div class="help-block" *ngIf=" ProductPricePerUnitControl.touched && ProductPricePerUnitControl.errors?.pattern ">ProductPricePerUnit is invalid</div>
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="Product Discount" [(ngModel)]="products.ProductDiscount" #ProductDiscountControl="ngModel" onKeyPress="if(this.value.length==10) return false;" name="ProductDiscount" type="number" required>
+                                            </mat-form-field>
+                                            <div class="help-block" *ngIf=" ProductDiscountControl.touched && ProductDiscountControl.errors?.pattern ">ProductDiscount is invalid</div>
+                                        </div>
+
+                                   
+                                   
+                                      
+                                        <div class="col-md-4">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="ProductUnitInStock" [(ngModel)]="products.ProductUnitInStock" #ProductUnitInStockControl="ngModel" onKeyPress="if(this.value.length==10) return false;" name="ProductUnitInStock" type="number" required>
+                                            </mat-form-field>
+                                            <div class="help-block" *ngIf=" ProductUnitInStockControl.touched && ProductUnitInStockControl.errors?.pattern ">ProductUnitInStock is invalid</div>
+                                        </div>
+                                        
+
+                                        <div class="col-md-4">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="ProductUnitInOrder" [(ngModel)]="products.ProductUnitInOrder" #ProductUnitInOrderControl="ngModel" onKeyPress="if(this.value.length==10) return false;" name="ProductUnitInOrder" type="number" required>
+                                            </mat-form-field>
+                                            <div class="help-block" *ngIf="ProductUnitInOrderControl.touched && ProductUnitInOrderControl.errors?.pattern ">ProductUnitInOrder is invalid</div>
+                                        </div>
+                                       
+                                        <div class="col-md-4">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="ProductUnitWeight" [(ngModel)]="products.ProductUnitWeight" #ProductUnitWeightControl="ngModel" onKeyPress="if(this.value.length==10) return false;" name="ProductUnitWeight" type="number" required>
+                                            </mat-form-field>
+                                            <div class="help-block" *ngIf="ProductUnitWeightControl.touched && ProductUnitWeightControl.errors?.pattern ">ProductUnitWeight is invalid</div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="ProductAvailableSize" [(ngModel)]="products.ProductAvailableSize" #ProductAvailableSizeControl="ngModel" name="ProductAvailableSize" class="example-full-width" type="text" required onkeypress="return (event.charCode > 64 && 
+                                            event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)">
+                                            </mat-form-field>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="form-group pmd-textfield pmd-textfield-floating-label example-full-width">
+                                                <label for="propeller-select">ProductInstructionId</label>
+                                                <select id="propeller-select" class="form-control" name="ProductInstructionId" [(ngModel)]=products.ProductInstructionId #ProductInstructionId="ngModel" (change)="MainExeChange($event)">
+                                                    <option *ngFor="let Instruction of Instructionlist" [value]="Instruction.Id">
+                                                        {{Instruction.Name}} </option>
+                                                        <option [value]="2">2</option>
+                                                </select>
+                                            </div>
+        
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group pmd-textfield pmd-textfield-floating-label example-full-width">
+                                                <label for="propeller-select">ProductSpecificationId</label>
+                                                <select id="propeller-select" class="form-control" name="ProductSpecificationId" [(ngModel)]=products.ProductSpecificationId #ProductSpecificationId="ngModel" (change)="MainExeChange($event)">
+                                                    <option *ngFor="let Specification of Specificationlist" [value]="Specification.Id">
+                                                        {{Specification.Name}} </option>
+                                                        <option [value]="2">2</option>
+                                                </select>
+                                            </div>
+        
+                                        </div>
+
+
+                                        <div class="col-md-6">
+                                            <div class="form-group pmd-textfield pmd-textfield-floating-label example-full-width">
+                                                <label for="propeller-select">ProductStatus</label>
+                                                <select id="propeller-select" class="form-control" name="ProductStatus" [(ngModel)]=products.ProductStatus #ProductStatus="ngModel" (change)="MainExeChange($event)">
+                                                    <!-- <option *ngFor="let Specification of Specificationlist" [value]="Specification.Id">
+                                                        {{ProductStatus.Name}} </option> -->
+                                                        <option [value]="1">Active</option>
+                                                        <option [value]="2">InActive</option>
+                                                </select>
+                                            </div>
+        
+                                        </div>
+
+                                        
+                                        <div class="col-md-6">
+                                            <div class="form-group pmd-textfield pmd-textfield-floating-label example-full-width">
+                                                <label for="propeller-select">ProductStockStatus</label>
+                                                <select id="propeller-select" class="form-control" name="ProductStockStatus" [(ngModel)]=products.ProductStockStatus #ProductStockStatus="ngModel" (change)="MainExeChange($event)">
+                                                    <!-- <option *ngFor="let Specification of Specificationlist" [value]="Specification.Id">
+                                                        {{ProductStatus.Name}} </option> -->
+                                                        <option [value]="2">2</option>
+                                                </select>
+                                            </div>
+        
+                                        </div>
+
+
+                                        <div class="col-md-6">
+                                            <div class="form-group pmd-textfield pmd-textfield-floating-label example-full-width">
+                                                <label for="propeller-select">CategoryId</label>
+                                                <select id="propeller-select" class="form-control" name="CategoryId" [(ngModel)]=products.CategoryId #CategoryId="ngModel" (change)="MainExeChange($event)">
+                                                    <option *ngFor="let Category of Categorylist" [value]="Category.Id">
+                                                        {{Category.Name}} </option>
+                                                        <option [value]="2">2</option>
+                                                </select>
+                                            </div>
+        
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="form-group pmd-textfield pmd-textfield-floating-label example-full-width">
+                                                <label for="propeller-select">Distributor</label>
+                                                <select id="propeller-select" class="form-control" name="DistributorId" [(ngModel)]=products.DistributorId #DistributorId="ngModel" (change)="MainExeChange($event)">
+                                                    <option *ngFor="let Distributor of Distributorlist" [value]="Distributor.Id">
+                                                        {{Distributor.Name}} </option>
+                                                        <option [value]="2">2</option>
+                                                </select>
+                                            </div>
+        
+                                        </div>
+
+                                        
+                                        <div class="col-md-6">
+                                            <div class="form-group pmd-textfield pmd-textfield-floating-label example-full-width">
+                                                <label for="propeller-select">OfferId</label>
+                                                <select id="propeller-select" class="form-control" name="OfferId" [(ngModel)]=products.OfferId #OfferId="ngModel" (change)="MainExeChange($event)">
+                                                    <option *ngFor="let Offer of Offerlist" [value]="Distributor.Id">
+                                                        {{Offer.Name}} </option>
+                                                        <option [value]="2">2</option>
+                                                </select>
+                                            </div>
+        
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="form-group pmd-textfield pmd-textfield-floating-label example-full-width">
+                                                <label for="propeller-select">ReviewId</label>
+                                                <select id="propeller-select" class="form-control" name="ReviewId" [(ngModel)]=products.ReviewId #ReviewId="ngModel" (change)="MainExeChange($event)">
+                                                    <option *ngFor="let Review of ReviewIlist" [value]="Review.Id">
+                                                        {{Review.Name}} </option>
+                                                        <option [value]="2">2</option>
+                                                </select>
+                                            </div>
+        
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <label for="avatar">Upload Photo 1:</label>
+
+                                            <input type="file" [(ngModel)]="products.ProductImage1"  (change)="fileChangeEvent($event)" #PhotoControl="ngModel" id="avatar" name="ProductImage1" accept="image/png, image/jpeg" required>
+
+                                        </div> 
+
+                                        <div class="col-md-4">
+                                            <label for="avatar">Upload Photo 2:</label>
+
+                                            <input type="file" [(ngModel)]="products.ProductImage2"  (change)="fileChangeEvent($event)" #PhotoControl="ngModel" id="avatar" name="ProductImage2" accept="image/png, image/jpeg" required>
+
+                                        </div> 
+                                        <div class="col-md-4">
+                                            <label for="avatar">Upload Photo 3:</label>
+
+                                            <input type="file" [(ngModel)]="products.ProductImage3"  (change)="fileChangeEvent($event)" #PhotoControl="ngModel" id="avatar" name="ProductImage3" accept="image/png, image/jpeg" required>
+
+                                        </div> 
+
+<!--  -->
+
+
+                                        <!-- <div class="col-md-6">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="Name" [(ngModel)]="distributor.Name" #NameControl="ngModel" name="Name" class="example-full-width" type="text" required onkeypress="return (event.charCode > 64 && 
+                                            event.charCode < 91 ) || (event.charCode > 96 && event.charCode < 123) || (event.charCode == 32)">
+                                            </mat-form-field>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <mat-form-field class="example-full-width">
+                                                <textarea matInput placeholder="Address" [(ngModel)]="distributor.Address" #AddressControl="ngModel" name="Address" class="example-full-width" type="text" required></textarea>
+                                            </mat-form-field>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="form-group pmd-textfield pmd-textfield-floating-label example-full-width">
+                                                <label for="propeller-select">Country</label>
+                                                <select id="propeller-select" class="form-control" name="Country" [(ngModel)]=distributor.Country #Country="ngModel" (change)="MainExeChange($event)">
+                                                    <option *ngFor="let Country of distributorlist" [value]="Country.Id">
+                                                        {{Country.Name}} </option>
+                                                        <option>OMd</option>
+                                                </select>
+                                            </div>
+        
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="form-group pmd-textfield pmd-textfield-floating-label example-full-width">
+                                                <label for="propeller-select">State</label>
+                                                <select id="propeller-select" class="form-control" name="Country" [(ngModel)]=distributor.State #State="ngModel" (change)="MainExeChange($event)">
+                                                    <option *ngFor="let State of distributorlist" [value]="State.Id">
+                                                        {{State.Name}} </option>
+                                                        <option>OMm</option>
+                                                </select>
+                                            </div>
+        
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="form-group pmd-textfield pmd-textfield-floating-label example-full-width">
+                                                <label for="propeller-select">City</label>
+                                                <select id="propeller-select" class="form-control" name="City" [(ngModel)]=distributor.City #City="ngModel" (change)="MainExeChange($event)">
+                                                    <option *ngFor="let State of distributorlist" [value]="City.Id">
+                                                        {{City.Name}} </option>
+                                                    <option>OM</option>
+                                                </select>
+                                            </div>
+        
+                                        </div>
+                                        <div class="col-md-6">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="Email ID" [(ngModel)]="distributor.Email" #EmailControl="ngModel" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$" name="Email" type="email" required>
+                                            </mat-form-field>
+                                            <div class="help-block" *ngIf=" EmailControl.errors?.pattern && EmailControl.touched ">Email is invalid</div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="Mobile Number" [(ngModel)]="distributor.Mobile" #MobileControl="ngModel" onKeyPress="if(this.value.length==10) return false;" name="Mobile" type="number" required>
+                                            </mat-form-field>
+                                            <div class="help-block" *ngIf=" MobileControl.touched && MobileControl.errors?.pattern ">Mobile number is invalid</div>
+                                        </div>
+                                       
+                                        <div class="col-md-6">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="PostalCode Number" [(ngModel)]="distributor.PostalCode" #PostalCodeControl="ngModel" onKeyPress="if(this.value.length==6) return false;" name="PostalCode" type="number" required>
+                                            </mat-form-field>
+                                            <div class="help-block" *ngIf=" PostalCodeControl.touched && PostalCodeControl.errors?.pattern ">PostalCode number is invalid</div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="Start Date" [(ngModel)]="distributor.StartDate" #StartDate="ngModel" type="date" name="StartDate" required>
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="End Date" [(ngModel)]="distributor.EndDate" #EndDate="ngModel" type="date" name="EndDate" required>
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <label for="avatar">Upload Photo:</label>
+
+                                            <input type="file" [(ngModel)]="distributor.Photo"  (change)="fileChangeEvent($event)" #PhotoControl="ngModel" id="avatar" name="Photo" accept="image/png, image/jpeg" required>
+
+                                        </div> -->
+                                        <!-- <div class="col-md-6">
+                                            <div class="form-group pmd-textfield pmd-textfield-floating-label example-full-width">
+                                                <label for="propeller-select">Country</label>
+                                                <select id="propeller-select" class="form-control" name="Country" [(ngModel)]=distributor.Country.Id #Id="ngModel" (change)="MainExeChange($event)">
+                                                    <option *ngFor="let Country of CountryList" [value]="Country.Id">
+                                                        {{Country.Name}} </option>
+                                                </select>
+                                            </div>
+        
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="form-group pmd-textfield pmd-textfield-floating-label example-full-width">
+                                                <label for="propeller-select">State</label>
+                                                <select id="propeller-select" class="form-control" name="State" [(ngModel)]=distributor.State.Id #Id="ngModel" (change)="MainExeChange($event)">
+                                                    <option *ngFor="let State of StateList" [value]="State.Id">
+                                                        {{State.Name}} </option>
+                                                </select>
+                                            </div>
+        
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="form-group pmd-textfield pmd-textfield-floating-label example-full-width">
+                                                <label for="propeller-select">City</label>
+                                                <select id="propeller-select" class="form-control" name="City" [(ngModel)]=distributor.City.Id #Id="ngModel" (change)="MainExeChange($event)">
+                                                    <option *ngFor="let City of Citylist" [value]="City.Id">
+                                                        {{City.Name}} </option>
+                                                </select>
+                                            </div>
+        
+                                        </div> -->
+
+                                        <!-- <div class="col-md-6">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="DOB" [(ngModel)]="instructor.DOB" #DOBControl="ngModel" type="date" name="DOB" required>
+                                            </mat-form-field>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="Salary" [(ngModel)]="instructor.Salary" #SalaryControl="ngModel" type="number" name="Salary" required>
+                                            </mat-form-field>
+                                        </div>
+
+
+                                        <div class="col-md-6">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="Email ID" [(ngModel)]="instructor.Email" #EmailControl="ngModel" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$" name="Email" type="email" required>
+                                            </mat-form-field>
+                                            <div class="help-block" *ngIf=" EmailControl.errors?.pattern && EmailControl.touched ">Email is invalid</div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="Mobile Number" [(ngModel)]="instructor.Mobile" #MobileControl="ngModel" onKeyPress="if(this.value.length==10) return false;" name="Mobile" type="number" required>
+                                            </mat-form-field>
+                                            <div class="help-block" *ngIf=" MobileControl.touched && MobileControl.errors?.pattern ">Mobile number is invalid</div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <mat-form-field class="example-full-width">
+                                                <textarea matInput placeholder="Address" [(ngModel)]="instructor.Address" #AddressControl="ngModel" name="Address" class="example-full-width" type="text" required></textarea>
+                                            </mat-form-field>
+                                        </div>
+
+                                        <div class="col-md-12">
+                                            <mat-form-field class="example-full-width">
+                                                <textarea matInput placeholder="Professional Details" [(ngModel)]="instructor.ProfessionalDetails" #ProfessionalDetailsControl="ngModel" name="ProfessionalDetails" class="example-full-width" type="text" required></textarea>
+                                            </mat-form-field>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="Experience" [(ngModel)]="instructor.Experience" #ExperienceControl="ngModel" name="Experience" class="example-full-width" type="text" required>
+                                            </mat-form-field>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="Thumb Id" [(ngModel)]="instructor.ThumbId" #ThumbIdControl="ngModel" name="ThumbId" class="example-full-width" type="number" required>
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="Joining Date" [(ngModel)]="instructor.JoiningDate" #JoiningDate="ngModel" type="date" name="JoiningDate" required>
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="Date Of Resign" [(ngModel)]="instructor.DateOfResign" #DateOfResign="ngModel" type="date" name="DateOfResign" required>
+                                            </mat-form-field>
+                                        </div>
+                                       
+                                        <div class="col-md-12">
+                                            <label for="avatar">Upload Photo:</label>
+
+                                            <input type="file" [(ngModel)]="instructor.Photo"  (change)="fileChangeEvent($event)" #PhotoControl="ngModel" id="avatar" name="Photo" accept="image/png, image/jpeg" required>
+
+                                        </div> -->
+
+
+                                    </div>
+                                    <br>
+
+                                    <div class="row"style="margin:auto">
+                                        <div class="col-md-5"></div>
+
+                                        <button mat-raised-button type="submit" class="btn btn-danger" [disabled]="productsForm.invalid" (click)="OnSubmit()">Save</button>
+
+                                        <div class="col-md-2"></div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-2"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

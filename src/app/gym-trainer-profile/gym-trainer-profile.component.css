@@ -1,0 +1,10 @@
+.textarea{
+    height: 132px !important;
+    resize: none;
+    width: 400px;
+
+    /*line-height: $bmd-line-height !important;*/
+}
+.textarea:active{
+    border: 1px solid blue !important;
+}

@@ -1,0 +1,70 @@
+
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <!-- <div class="col-md-2"></div> -->
+            <div class="col-md-12" style="padding-top:15px">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">Order List </h4>
+                        <p class="card-category"></p>
+                    </div>
+                    <div class="card-body">
+                        <form #orgTypeForm="ngForm">
+                            <div class="row">
+                                <div class="card">
+                                    <div class="col-md-12">
+
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered">
+                                                <thead class="thh">
+                                                    <tr class="titlecolor">
+                                                        <!-- <th>Id</th> -->
+
+                                                        <th>Title</th>
+                                                        <th>Price</th>
+                                                        <th>Month</th>
+                                                        <!-- <th>ValidTill</th> -->
+                                                        <th>Description</th>
+                                                        <th>Remarks</th>
+                                                        <th>Action</th>
+
+
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr *ngFor="let i of membershipplanList">
+                                                        <!-- <td>{{i.Id}}</td> -->
+                                                        <td>{{i.Title}}</td>
+                                                        <td>{{i.Price}}</td>
+                                                        <td>{{i.Period}}</td>
+                                                        <!-- <td>{{i.ValidTill}}</td> -->
+                                                        <td>{{i.Description}}</td>
+                                                        <td>{{i.Remarks}}</td>
+                                                        <td>
+                                                            <i class="fa fa-pencil" (click)="Edit(i.Id)" style="cursor: pointer; color: green;  font-size: 20px;  margin-right: 15px;" aria-hidden="true"></i>
+                                                            <i class="fa fa-trash" (click)="Delete(i.Id)" style="cursor: pointer;   color:  rgb(199, 56, 5); font-size: 20px;" aria-hidden="true"></i>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+                                <div class="col-md-12">
+
+                                </div>
+                            </div>
+
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,86 @@
+<p>payment-history works!</p>
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <div class="card">
+                    <form #membershipPlanForm="ngForm">
+                        <div class="card-header card-header-danger">
+                            <h4 class="card-title">Payment History</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group pmd-textfield pmd-textfield-floating-label example-full-width">
+                                        <label for="propeller-select">User</label>
+                                        <input type="text" id="propeller-select" class="form-control" name="UserName" [(ngModel)]=UserPlanDetails.Member.UserName #UserName="ngModel" readonly>
+                                            <!-- <option *ngFor="let Member of UserNames" [value]="Member.Id">
+                                                {{Member.UserName}} </option>
+                                        </select> -->
+                                    </div>
+
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="form-group pmd-textfield pmd-textfield-floating-label example-full-width">
+                                        <label for="propeller-select">Plan</label>
+                                        <input type="text" id="propeller-select" class="form-control" name="Title"  [(ngModel)]="UserPlanDetails.MembershipPlan.Title"  #Title="ngModel" readonly>
+                                            <!-- <option *ngFor="let Member of UserNames" [value]="Member.Id">
+                                                {{Member.UserName}} </option>
+                                        </select> -->
+                                    </div>
+
+                                </div>
+
+
+
+                               
+
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input id="amount" matInput placeholder="Amount" [(ngModel)]="UserPlanDetails.MembershipPlan.Price" #Price="ngModel" name="Price" type="number" required >
+                                    </mat-form-field>
+
+                                </div>
+
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Received Amount" [(ngModel)]="PaymentHistory.ReceivedAmount" #ReceivedAmount="ngModel" name="ReceivedAmount"id="ReceivedAmount" type="number"  required >
+                                        <!-- <button mat-raised-button type="button" class="btn btn-danger"  (click)="pendingAmt()">Submit</button> -->
+                                    </mat-form-field>
+
+                                </div>
+
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="pending Amount" [(ngModel)]="PaymentHistory.PendingAmount" #PendingAmount="ngModel" name="PendingAmount" type="number" (click)="pendingAmt()" required >
+                                    </mat-form-field>
+
+                                </div>
+                        
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Paid Date" [(ngModel)]="PaymentHistory.PaidDate" #PaidDate="ngModel" type="date" name="PaidDate" required>
+                                    </mat-form-field>
+                                </div> 
+
+
+                            </div>
+                            <div class="row"style="margin:auto">
+                                <div class="col-md-5"></div>
+
+                                <button mat-raised-button type="submit" class="btn btn-danger" [disabled]="membershipPlanForm.invalid" (click)="OnSubmit()">Submit</button>
+                                <div class="clearfix"></div>
+
+                                <div class="col-md-2"></div>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-md-2"></div>
+        </div>
+    </div>
+</div>

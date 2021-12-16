@@ -1,0 +1,25 @@
+.table_table-bordered{
+    border: 2px solid black;
+  }
+.table-bordered th, .table-bordered td {
+    border: 1px solid black;
+} 
+.th,
+td {
+  border: 1px solid black;
+  
+}
+.thh{
+  color: #4554A4 !important;
+}
+.titlecolor th{
+  color: #7b7777;;
+  font-weight: 600;
+  text-align: -webkit-center !important;
+  background-color: whitesmoke;
+
+}
+.card-title{
+  text-align: center;
+
+}

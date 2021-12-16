@@ -1,0 +1,71 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-2"></div>
+
+                    <div class="col-md-8">
+                        <div class="card">
+                            <div class="card-header card-header-danger">
+                                <h4 class="card-title">Update Student Plan Details</h4>
+                                <!-- <p class="card-category">Complete your profile</p> -->
+                            </div>
+                            <div class="card-body">
+                                <form #studentPlanDetailsForm="ngForm">
+
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group pmd-textfield pmd-textfield-floating-label example-full-width">
+                                                <label for="propeller-select">Student</label>
+                                                <select id="propeller-select" class="form-control" name="JobSeeker" [(ngModel)]=studentplandetails.JobSeeker.Id #Id="ngModel" (change)="JobSeekerChange($event)">
+                                                        <option *ngFor="let JobSeeker of JobSeekers"  [value]="JobSeeker.Id"> {{JobSeeker.FName}} </option>                                                              
+                                              </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <div class="form-group pmd-textfield pmd-textfield-floating-label example-full-width">
+                                                <label for="propeller-select">Plan</label>
+                                                <select id="propeller-select" class="form-control" name="OrganizationName" [(ngModel)]=studentplandetails.StudentPlansMaster.Id #Id="ngModel" (change)="planChange($event)">
+                                                        <option *ngFor="let StudentPlansMaster of StudentPlansMasters"  [value]="StudentPlansMaster.Id"> {{StudentPlansMaster.Title}} </option>                                                              
+                                              </select>
+                                            </div>
+                                        </div>
+
+                                        
+
+                                   
+
+                                        <div class="col-md-6">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="Start Date" type="date" name="StartDate" [(ngModel)]=studentplandetails.StartDate #StartDate="ngModel"required>
+                                            </mat-form-field>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <mat-form-field class="example-full-width">
+                                                <input matInput placeholder="End Date" type="date"name="EndDate" [(ngModel)]=studentplandetails.EndDate #EndDate="ngModel" required>
+                                            </mat-form-field>
+                                        </div>
+
+
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-5"></div>
+                                        <div class="col-md-1">
+                                            <button mat-raised-button type="submit" [disabled]="studentPlanDetailsForm.invalid" class="btn btn-danger"(click)="OnSubmit()">Save</button>
+                                        </div>
+                                        <div class="col-md-2"></div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-2"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

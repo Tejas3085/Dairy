@@ -1,0 +1,58 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <!-- <div class="col-md-2"></div> -->
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">Student Plan List</h4>
+                        <p class="card-category"></p>
+                    </div>
+                    <div class="card-body">
+                    
+                            <div class="row">
+
+                                <div class="col-md-12">                                
+                                   
+                                    <div class="table-responsive">
+                                      <table class="table table-bordered">
+                                        <thead>
+                                          <tr>
+                                            <th>ID</th>
+                                            <th>Name</th>
+                                            <th>Email</th>
+                                            <th>Mobile</th>
+                                            <th>Edit</th>
+                                            <th>Delete</th>
+                                    
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr *ngFor="let i of adminList">
+                                                <td>{{i.Id}}</td>
+                                                <td>{{i.Name}}</td>
+                                                <td>{{i.Email}}</td>
+                                                <td>{{i.Mobile}}</td>
+                                                <td (click)="Edit(i.Id)" style="cursor: pointer;"><i class="fa fa-pencil" aria-hidden="true" style="margin-right: 7px;"></i>Edit</td>
+                                                <td (click)="Delete(i.Id)" style="cursor: pointer;"><i class="fa fa-trash" aria-hidden="true" style="margin-right: 7px;"></i>Delete</td>
+                                                </tr>
+                                        </tbody>
+                                      </table>
+                                    </div>                   
+                                  </div>  
+                                </div>  
+
+                              
+                            <div class="row">
+                                <div class="col-md-12">
+                                   
+                                </div>
+                            </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,116 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <!-- <div class="col-md-2"></div> -->
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title">Franchise Details</h4>
+                        
+                    </div>
+                    <div class="card-body">
+                        <form #orgTypeForm="ngForm">
+                            <div class="row">
+
+                                <div class="col-md-12">                                
+                                    <br>
+                                    <div class="table-responsive">
+                                      <table class="table table-bordered">
+                                        <thead>
+                                          <tr class="titlecolor">
+                                              <th>Id</th>
+                                            <th>Brand Name</th>
+                                            <th>Investment Amount</th>
+                                            <th>Business Description</th>
+                                            <!-- <th>Rules</th> -->
+                                            <!-- <th>City</th> -->
+                                            <!-- <th>BusinessTypeId</th> -->
+                                            <th>Facilities Provided</th>
+                                            <th>Status</th>
+                                            <th>Edit</th>
+                                            <th>Delete</th>
+                                    
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                          <tr *ngFor="let i of franchisedetailsList">
+                                            <td>{{i.Id}}</td>
+                                            <td>{{i.BrandName}}</td>
+                                            <td>{{i.InvestmentAmount}}</td>
+                                            <td>{{i.BusinessDescription}}</td>
+                                            <!-- <td>{{i.Rules}}</td>
+                                            <td>{{i.City}}</td> -->
+                                            <!-- <td>{{i.BusinessTypeId}}</td> -->
+                                            <td>{{i.FacilitiesProvided}}</td>
+                                            <td>{{i.Status}}</td>
+                                           <td (click)="Edit(i.Id)" style="cursor: pointer;"><i class="fa fa-pencil" aria-hidden="true" style="margin-right: 7px;"></i>Edit</td>
+                                            <td (click)="Delete(i.Id)" style="cursor: pointer;"><i class="fa fa-trash" aria-hidden="true" style="margin-right: 7px;"></i>Delete</td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </div>                   
+                                  </div>  
+                                </div>  
+
+                                <!-- <div class="col-md-6">
+                                    
+                                        <div class="form-group pmd-textfield pmd-textfield-floating-label example-full-width">
+                                         
+                                            <select id="propeller-select" class="form-control">
+                                        <option>Created By</option>
+                                        <option>xyz</option>
+                                        <option>xyz</option>
+                                        <option>xyz</option>
+                                      
+                                    </select>
+                                        </div>
+    
+    
+                                    
+                                </div>
+                                <div class="col-md-6">
+                                    
+                                    <div class="form-group pmd-textfield pmd-textfield-floating-label example-full-width">
+                                      
+                                        <select id="propeller-select" class="form-control">
+                                    <option>Updated By</option>
+                                    <option>xyz</option>
+                                    <option>xyz</option>
+                                    <option>xyz</option>
+                                  
+                                </select>
+                                    </div>
+
+
+                                
+                            </div>
+
+
+                         
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Created Date" type="date">
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-6">
+                                    <mat-form-field class="example-full-width">
+                                        <input matInput placeholder="Updated Date" type="date">
+                                    </mat-form-field>
+                                </div>
+                            </div> -->
+                            <div class="row">
+                                <div class="col-md-12">
+                                   
+                                </div>
+                            </div>
+
+
+                            <!-- <button mat-raised-button type="submit" class="btn btn-danger pull-right">Save</button>
+                            <div class="clearfix"></div> -->
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
